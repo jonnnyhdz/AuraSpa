@@ -762,187 +762,191 @@
                 <iframe class="rounded-lg shadow-lg w-full h-64" src="https://www.youtube.com/embed/q8YFbFPUqhI"
                     allowfullscreen></iframe>
             </div>
-            
+
 
         </div>
     </section>
-<!-- Sección de Calificación Mejorada -->
-<section id="calificacion" class="py-16 px-6 bg-gradient-to-b from-blue-50 to-blue-100">
-    <div class="container mx-auto max-w-3xl bg-white rounded-xl shadow-lg p-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Califica nuestro Sitio</h2>
-        <p class="mt-4 text-lg italic text-gray-700">Tu opinión es muy importante para nosotros.</p>
+    <!-- Sección de Calificación Mejorada -->
+    <section id="calificacion" class="py-16 px-6 bg-gradient-to-b from-blue-50 to-blue-100">
+        <div class="container mx-auto max-w-3xl bg-white rounded-xl shadow-lg p-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Califica nuestro Sitio</h2>
+            <p class="mt-4 text-lg italic text-gray-700">Tu opinión es muy importante para nosotros.</p>
 
-        <!-- Formulario de Calificación -->
-        <form id="rating-form" class="mt-8 space-y-6">
-            <!-- Nombre o Correo -->
-            <div>
-                <label for="nombre" class="block text-lg font-semibold text-gray-700">Nombre o Correo Electrónico:</label>
-                <input type="text" id="nombre" name="nombre"
-                    class="w-full mt-2 p-3 border-2 border-blue-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    placeholder="Escribe tu nombre o correo" required>
-            </div>
-
-            <!-- Estrellas de Calificación -->
-            <div class="text-center">
-                <p class="text-lg font-semibold text-gray-700">¿Qué te pareció el sitio?</p>
-                <div class="flex justify-center mt-3 space-x-2">
-                    <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                        data-value="1">★</span>
-                    <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                        data-value="2">★</span>
-                    <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                        data-value="3">★</span>
-                    <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                        data-value="4">★</span>
-                    <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                        data-value="5">★</span>
+            <!-- Formulario de Calificación -->
+            <form id="rating-form" class="mt-8 space-y-6">
+                <!-- Nombre o Correo -->
+                <div>
+                    <label for="nombre" class="block text-lg font-semibold text-gray-700">Nombre o Correo
+                        Electrónico:</label>
+                    <input type="text" id="nombre" name="nombre"
+                        class="w-full mt-2 p-3 border-2 border-blue-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        placeholder="Escribe tu nombre o correo" required>
                 </div>
-                <input type="hidden" id="rating" name="rating" value="0">
-            </div>
 
-            <!-- Comentarios -->
-            <div>
-                <label for="comentarios" class="block text-lg font-semibold text-gray-700">Escribe tu opinión:</label>
-                <textarea id="comentarios" name="comentarios" rows="4"
-                    class="w-full mt-2 p-3 border-2 border-blue-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    placeholder="Escribe aquí tu comentario..." required></textarea>
-            </div>
-
-            <!-- Botón de Envío con Animación -->
-            <div class="text-center">
-                <button id="enviar-btn" type="submit"
-                    class="mt-4 bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition shadow-lg flex items-center justify-center gap-2">
-                    <i class="fas fa-paper-plane"></i> Enviar Calificación
-                </button>
-
-                <!-- Ícono de carga oculto -->
-                <div id="loading-icon" class="hidden mt-4">
-                    <i class="fas fa-spinner fa-spin text-blue-500 text-3xl"></i>
-                    <p class="text-blue-500 font-semibold mt-2">Enviando...</p>
+                <!-- Estrellas de Calificación -->
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-700">¿Qué te pareció el sitio?</p>
+                    <div class="flex justify-center mt-3 space-x-2">
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="1">★</span>
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="2">★</span>
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="3">★</span>
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="4">★</span>
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="0">
                 </div>
-            </div>
 
-            <!-- Mensaje de Confirmación -->
-            <div id="mensaje-confirmacion" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg shadow-md">
-                <i class="fas fa-check-circle text-2xl"></i>
-                <p class="mt-2 text-lg font-semibold">¡Gracias por tu calificación!</p>
-                <p class="text-sm text-gray-600">Tu opinión ha sido enviada con éxito.</p>
-            </div>
-        </form>
-    </div>
-</section>
+                <!-- Comentarios -->
+                <div>
+                    <label for="comentarios" class="block text-lg font-semibold text-gray-700">Escribe tu
+                        opinión:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4"
+                        class="w-full mt-2 p-3 border-2 border-blue-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        placeholder="Escribe aquí tu comentario..." required></textarea>
+                </div>
 
+                <!-- Botón de Envío con Animación -->
+                <div class="text-center">
+                    <button id="enviar-btn" type="submit"
+                        class="mt-4 bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition shadow-lg flex items-center justify-center gap-2">
+                        <i class="fas fa-paper-plane"></i> Enviar Calificación
+                    </button>
 
+                    <!-- Ícono de carga oculto -->
+                    <div id="loading-icon" class="hidden mt-4">
+                        <i class="fas fa-spinner fa-spin text-blue-500 text-3xl"></i>
+                        <p class="text-blue-500 font-semibold mt-2">Enviando...</p>
+                    </div>
+                </div>
 
-<!-- Footer -->
-<footer class="bg-gradient-to-t from-blue-600 to-blue-500 text-white text-center py-8">
-    <div class="container mx-auto max-w-5xl px-6">
-        
-        <!-- Logo o Nombre del Sitio -->
-        <h2 class="text-2xl font-quicksand font-bold">Motivación & Inteligencia Emocional</h2>
-        <p class="text-sm mt-2">Mejorando el bienestar y el rendimiento en el ámbito laboral y académico.</p>
-
-        <!-- Integrantes del Equipo -->
-        <div class="mt-6">
-            <h3 class="text-lg font-semibold">Equipo de Desarrollo</h3>
-            <ul class="mt-2 text-sm opacity-90 space-y-1">
-                <li>Hernández Ramírez Cristopher Adriel</li>
-                <li>Narvaez Manzanero María Belem</li>
-                <li>Novelo Chan Rocío Montserrat</li>
-                <li>Sánchez Gatica María José</li>
-                <li>Tuz Chan Adrián Arturo</li>
-            </ul>
+                <!-- Mensaje de Confirmación -->
+                <div id="mensaje-confirmacion" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg shadow-md">
+                    <i class="fas fa-check-circle text-2xl"></i>
+                    <p class="mt-2 text-lg font-semibold">¡Gracias por tu calificación!</p>
+                    <p class="text-sm text-gray-600">Tu opinión ha sido enviada con éxito.</p>
+                </div>
+            </form>
         </div>
+    </section>
 
-        <!-- Línea Divisora -->
-        <div class="w-20 h-[2px] bg-white mx-auto my-6 opacity-50"></div>
 
-        <!-- Derechos Reservados -->
-        <p class="text-sm opacity-80">© 2025 Motivación & Inteligencia Emocional. Todos los derechos reservados.</p>
-    </div>
-</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-t from-blue-600 to-blue-500 text-white text-center py-8">
+        <div class="container mx-auto max-w-5xl px-6">
+
+            <!-- Logo o Nombre del Sitio -->
+            <h2 class="text-2xl font-quicksand font-bold">Motivación & Inteligencia Emocional</h2>
+            <p class="text-sm mt-2">Mejorando el bienestar y el rendimiento en el ámbito laboral y académico.</p>
+
+            <!-- Integrantes del Equipo -->
+            <div class="mt-6">
+                <h3 class="text-lg font-semibold">Equipo de Desarrollo</h3>
+                <ul class="mt-2 text-sm opacity-90 space-y-1">
+                    <li>Hernández Ramírez Cristopher Adriel</li>
+                    <li>Narvaez Manzanero María Belem</li>
+                    <li>Novelo Chan Rocío Montserrat</li>
+                    <li>Sánchez Gatica María José</li>
+                    <li>Tuz Chan Adrián Arturo</li>
+                </ul>
+            </div>
+
+            <!-- Línea Divisora -->
+            <div class="w-20 h-[2px] bg-white mx-auto my-6 opacity-50"></div>
+
+            <!-- Derechos Reservados -->
+            <p class="text-sm opacity-80">© 2025 Motivación & Inteligencia Emocional. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script>
 
-document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("Ldsx9l03dW483KPEy");
+        document.addEventListener("DOMContentLoaded", function () {
+            emailjs.init("Ldsx9l03dW483KPEy");
 
-    const stars = document.querySelectorAll(".star");
-    const ratingInput = document.getElementById("rating");
-    const enviarBtn = document.getElementById("enviar-btn");
-    const loadingIcon = document.getElementById("loading-icon");
-    const nombreInput = document.getElementById("nombre");
-    const comentariosInput = document.getElementById("comentarios");
-    const form = document.getElementById("rating-form");
-    const mensajeConfirmacion = document.getElementById("mensaje-confirmacion");
+            const stars = document.querySelectorAll(".star");
+            const ratingInput = document.getElementById("rating");
+            const enviarBtn = document.getElementById("enviar-btn");
+            const loadingIcon = document.getElementById("loading-icon");
+            const nombreInput = document.getElementById("nombre");
+            const comentariosInput = document.getElementById("comentarios");
+            const form = document.getElementById("rating-form");
+            const mensajeConfirmacion = document.getElementById("mensaje-confirmacion");
 
-    // Función para activar las estrellas
-    stars.forEach(star => {
-        star.addEventListener("click", function () {
-            const value = this.getAttribute("data-value");
-            ratingInput.value = value;
+            // Función para activar las estrellas
+            stars.forEach(star => {
+                star.addEventListener("click", function () {
+                    const value = this.getAttribute("data-value");
+                    ratingInput.value = value;
 
-            stars.forEach(s => s.classList.remove("text-yellow-400"));
-            for (let i = 0; i < value; i++) {
-                stars[i].classList.add("text-yellow-400");
+                    stars.forEach(s => s.classList.remove("text-yellow-400"));
+                    for (let i = 0; i < value; i++) {
+                        stars[i].classList.add("text-yellow-400");
+                    }
+
+                    validarFormulario();
+                });
+            });
+
+            // Función para validar si todos los campos están llenos
+            function validarFormulario() {
+                if (nombreInput.value.trim() !== "" && comentariosInput.value.trim() !== "" && ratingInput.value !== "0") {
+                    enviarBtn.disabled = false;
+                    enviarBtn.classList.remove("bg-blue-300", "cursor-not-allowed");
+                    enviarBtn.classList.add("bg-blue-500", "hover:bg-blue-600", "cursor-pointer");
+                } else {
+                    enviarBtn.disabled = true;
+                    enviarBtn.classList.add("bg-blue-300", "cursor-not-allowed");
+                    enviarBtn.classList.remove("bg-blue-500", "hover:bg-blue-600", "cursor-pointer");
+                }
             }
 
-            validarFormulario();
-        });
-    });
+            // Detectar cambios en los campos
+            nombreInput.addEventListener("input", validarFormulario);
+            comentariosInput.addEventListener("input", validarFormulario);
 
-    // Función para validar si todos los campos están llenos
-    function validarFormulario() {
-        if (nombreInput.value.trim() !== "" && comentariosInput.value.trim() !== "" && ratingInput.value !== "0") {
-            enviarBtn.disabled = false;
-            enviarBtn.classList.remove("bg-blue-300", "cursor-not-allowed");
-            enviarBtn.classList.add("bg-blue-500", "hover:bg-blue-600", "cursor-pointer");
-        } else {
-            enviarBtn.disabled = true;
-            enviarBtn.classList.add("bg-blue-300", "cursor-not-allowed");
-            enviarBtn.classList.remove("bg-blue-500", "hover:bg-blue-600", "cursor-pointer");
-        }
-    }
+            // Enviar formulario con EmailJS
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
 
-    // Detectar cambios en los campos
-    nombreInput.addEventListener("input", validarFormulario);
-    comentariosInput.addEventListener("input", validarFormulario);
+                // Ocultar botón y mostrar loading
+                enviarBtn.classList.add("hidden");
+                loadingIcon.classList.remove("hidden");
 
-    // Enviar formulario con EmailJS
-    form.addEventListener("submit", function (event) {
-        event.preventDefault();
+                const formData = {
+                    to_email: "belemnarvaez1@gmail.com", // Asegura que el correo de destino es correcto
+                    from_name: nombreInput.value, // Ajuste para EmailJS
+                    user_rating: ratingInput.value, // Cambia la variable a un formato más claro
+                    user_message: comentariosInput.value // Cambia a algo más explícito
+                };
 
-        // Ocultar botón y mostrar loading
-        enviarBtn.classList.add("hidden");
-        loadingIcon.classList.remove("hidden");
 
-        const formData = {
-            nombre: nombreInput.value,
-            rating: ratingInput.value,
-            comentarios: comentariosInput.value
-        };
+                emailjs.send("service_w2hr0lt", "template_ah54y6h", formData)
+                    .then(() => {
+                        // Restaurar formulario
+                        form.reset();
+                        stars.forEach(s => s.classList.remove("text-yellow-400"));
+                        ratingInput.value = "0";
+                        validarFormulario();
 
-        emailjs.send("service_w2hr0lt", "template_ah54y6h", formData)
-            .then(() => {
-                // Restaurar formulario
-                form.reset();
-                stars.forEach(s => s.classList.remove("text-yellow-400"));
-                ratingInput.value = "0";
-                validarFormulario();
-
-                // Ocultar loading y mostrar mensaje de éxito
-                loadingIcon.classList.add("hidden");
-                mensajeConfirmacion.classList.remove("hidden");
-            })
-            .catch(error => {
-                console.error("❌ Error al enviar la calificación:", error);
-                loadingIcon.classList.add("hidden");
-                enviarBtn.classList.remove("hidden");
+                        // Ocultar loading y mostrar mensaje de éxito
+                        loadingIcon.classList.add("hidden");
+                        mensajeConfirmacion.classList.remove("hidden");
+                    })
+                    .catch(error => {
+                        console.error("❌ Error al enviar la calificación:", error);
+                        loadingIcon.classList.add("hidden");
+                        enviarBtn.classList.remove("hidden");
+                    });
             });
-    });
-});
+        });
 
 
         document.addEventListener("DOMContentLoaded", function () {
