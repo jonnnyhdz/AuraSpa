@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivación e Inteligencia Emocional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+    <style>
+        .font-nunito {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .font-quicksand {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animación de apertura y cierre del menú */
+        .menu-hidden {
+            opacity: 0;
+            transform: translateY(-10px) scaleY(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu-visible {
+            opacity: 1;
+            transform: translateY(0) scaleY(1);
+        }
+
+        /* Animación del navbar en responsive */
+        .nav-collapsed {
+            display: none;
+        }
+
+        /* Estilo del subrayado */
+        .active {
+            position: relative;
+        }
+
+        .active::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 100%;
+            height: 2px;
+            background-color: #2563eb;
+            /* Azul Tailwind */
+            transition: width 0.3s ease-in-out;
+        }
+
+        /* Animación de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animación de las flechas de scroll */
+        @keyframes fadeBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+        }
+
+        .arrow {
+            animation: fadeBounce 1.5s infinite;
+        }
+
+        .arrow:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .arrow:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        /* Efecto 3D para las Cards */
+        .card-3d {
+            background: linear-gradient(145deg, #ffffff, #e3e3e3);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card-3d:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Íconos 3D */
+        .icon-3d {
+            filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-blue-50 to-blue-100 text-gray-900">
+    <header>
+        <!-- Navbar Flotante -->
+        <nav
+            class="fixed top-4 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 shadow-lg backdrop-blur-md rounded-full px-6 py-3 flex items-center gap-4 md:gap-6 z-50 font-quicksand text-sm md:text-base">
+            <a href="#inicio"
+                class="nav-link text-blue-500 font-semibold hover:text-blue-700 transition active hidden md:block">Inicio</a>
+            <a href="#antecedentes"
+                class="nav-link text-gray-700 hover:text-blue-500 transition hidden md:block">Introducción</a>
+            <a href="#conceptos"
+                class="nav-link text-gray-700 hover:text-blue-500 transition hidden md:block">Conceptos</a>
+            <a href="#teorias" class="nav-link text-gray-700 hover:text-blue-500 transition hidden md:block">Teorías</a>
+            <a href="#autores" class="nav-link text-gray-700 hover:text-blue-500 transition hidden md:block">Autores</a>
+            <a href="#tecnicas"
+                class="nav-link text-gray-700 hover:text-blue-500 transition hidden md:block">Técnicas</a>
+            <a href="#programas"
+                class="nav-link text-gray-700 hover:text-blue-500 transition hidden md:block">Programas</a>
+            <a href="#necesidades"
+                class="nav-link text-gray-700 hover:text-blue-500 transition hidden md:block">Necesidades</a>
+
+            <a href="#cuestionario"
+                class="nav-link text-gray-700 hover:text-blue-500 transition hidden md:block">Cuestionario</a>
+
+            <!-- Botón de menú en móviles -->
+            <button id="menu-btn" class="md:hidden text-blue-500 focus:outline-none text-2xl">
+                ☰
+            </button>
+        </nav>
+
+        <!-- Menú desplegable en móviles -->
+        <div id="mobile-menu"
+            class="hidden fixed top-20 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 backdrop-blur-lg shadow-xl rounded-2xl px-4 py-3 w-40 text-center z-50 transition-all font-quicksand menu-hidden">
+            <a href="#inicio" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Inicio</a>
+            <a href="#antecedentes"
+                class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Introducción</a>
+            <a href="#conceptos" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Conceptos</a>
+            <a href="#teorias" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Teorías</a>
+            <a href="#autores" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Autores</a>
+            <a href="#tecnicas" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Técnicas</a>
+            <a href="#programas" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Programas</a>
+            <a href="#necesidades"
+                class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Necesidades</a>
+
+            <a href="#cuestionario"
+                class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Cuestionario</a>
+        </div>
+    </header>
+
+    <section id="inicio"
+        class="relative h-screen flex flex-col items-center text-center px-6 bg-cover bg-center md:bg-fixed"
+        style="background-image: url('https://www.universidadviu.com/sites/universidadviu.com/files/images/inteligencia-emocional.jpg');">
+
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <div id="inicio" class="relative z-10 text-white w-full max-w-5xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-quicksand font-bold mt-32 md:mt-40 fade-in">
+                Motivación & Inteligencia Emocional
+            </h1>
+            <p class="text-lg md:text-xl mt-16 max-w-xl mx-auto px-8 italic fade-in" style="animation-delay: 0.3s;">
+                Pensado para empresarios y estudiantes que desean potenciar su crecimiento personal y profesional a
+                través de la motivación y la inteligencia emocional.
+            </p>
+            <a href="#antecedentes"
+                class="mt-10 inline-block bg-teal-500 font-quicksand text-white px-6 py-3 rounded-full font-semibold hover:bg-teal-600 transition shadow-lg fade-in"
+                style="animation-delay: 0.6s;">
+                Explorar
+            </a>
+            <!-- Flechas animadas para indicar scroll -->
+            <div class="mt-6 flex flex-col items-center gap-1">
+                <span class="arrow text-3xl opacity-0">↓</span>
+                <span class="arrow text-3xl opacity-0">↓</span>
+                <span class="arrow text-3xl opacity-0">↓</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Antecedentes -->
+    <section id="antecedentes" class="py-20 px-6 bg-white">
+        <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 max-w-6xl">
+
+            <!-- Imagen (lado izquierdo) -->
+            <div class="w-full md:w-2/5 fade-in">
+                <img src="https://img.freepik.com/vector-premium/mujer-joven-jane-cerca-carpeta-hablando-telefono-inteligente-3d-vector-personas-ilustracion-personaje_365941-613.jpg?w=1480"
+                    alt="Psicología y motivación" class="rounded-lg w-96">
+            </div>
+
+            <!-- Texto (lado derecho) -->
+            <div class="w-full md:w-3/5 fade-in">
+                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Antecedentes</h2>
+                <p class="mt-10 text-lg text-gray-700 leading-relaxed italic text-justify">
+                    El estudio de la motivación y la inteligencia emocional tiene sus raíces en diversas disciplinas,
+                    como la psicología, la administración y la educación. Durante el siglo XX, teóricos como
+                    <strong>Abraham Maslow</strong> y <strong>Frederick Herzberg</strong> desarrollaron modelos para
+                    explicar
+                    las necesidades humanas y la satisfacción laboral.
+                </p>
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed italic text-justify">
+                    Por otro lado, la <strong>inteligencia emocional</strong> fue popularizada por
+                    <strong>Daniel Goleman</strong> en la década de 1990, quien destacó su importancia en el liderazgo y
+                    el éxito profesional.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Conceptos Claves -->
+    <section id="conceptos" class="py-20 px-6 bg-blue-50">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Conceptos Claves</h2>
+            <p class="mt-4 text-lg italic text-gray-700">
+                La motivación y la inteligencia emocional son fundamentales para el éxito personal y profesional.
+            </p>
+        </div>
+
+        <!-- Contenedor de Cards -->
+        <div class="container mx-auto flex flex-col md:flex-row items-start gap-10 mt-10 max-w-6xl">
+
+            <!-- Card 1: Motivación -->
+            <div class="w-full md:w-1/2 p-6 card-3d relative fade-in flex flex-col">
+                <!-- Ícono Font Awesome (Cohete en Outline para Motivación) -->
+                <i class="fas fa-rocket text-5xl text-blue-600 absolute top-4 right-4 icon-3d"></i>
+
+                <h3 class="text-2xl font-semibold font-quicksand text-blue-500">Motivación</h3>
+                <p class="mt-2 italic text-gray-700">
+                    Es el conjunto de factores internos y externos que impulsan a una persona a realizar
+                    una tarea con entusiasmo y persistencia.
+                </p>
+                <div class="w-full h-[2px] bg-gradient-to-r from-blue-500 via-gray-300 to-blue-500 my-8"></div>
+
+                <ul class="mt-4 text-gray-600 font-quicksand list-disc pl-6">
+                    <li><strong>Motivación intrínseca:</strong> interés personal y la satisfacción interna.</li>
+                    <li><strong>Motivación extrínseca:</strong> depende de recompensas externas como dinero,
+                        reconocimiento o promociones.</li>
+                    <li><strong>Motivación de logro:</strong> impulsa a las personas a superar desafíos y alcanzar metas
+                        personales o profesionales.</li>
+                    <li><strong>Motivación de afiliación:</strong> necesidad de conexión social, pertenencia y
+                        reconocimiento dentro de un grupo o comunidad.</li>
+                </ul>
+
+                <!-- Botón alineado con la tarjeta -->
+                <div class="mt-6 text-center">
+                    <a href="https://www.unodc.org/unodc/es/listen-first/super-skills/motivation.html" target="_blank"
+                        class="inline-block bg-blue-500 font-quicksand text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-600 transition transform hover:scale-105">
+                        Leer más
+                    </a>
+                </div>
+            </div>
+
+            <!-- Card 2: Inteligencia Emocional -->
+            <div class="w-full md:w-1/2 p-6 card-3d relative fade-in flex flex-col">
+                <!-- Ícono Font Awesome (Cerebro en Outline para Inteligencia Emocional) -->
+                <i class="fas fa-brain text-5xl text-teal-600 absolute top-4 right-4 icon-3d"></i>
+
+                <h3 class="text-2xl font-semibold font-quicksand text-teal-500">Inteligencia Emocional</h3>
+                <p class="mt-2 italic text-gray-700">
+                    Es la capacidad de reconocer, comprender y gestionar las emociones propias
+                    y de los demás.
+                </p>
+                <div class="w-full h-[2px] bg-gradient-to-r from-teal-500 via-gray-300 to-teal-500 my-6"></div>
+
+                <ul class="mt-4 text-gray-600 list-disc font-quicksand pl-6">
+                    <li><strong>Autoconciencia:</strong> reconocer las propias emociones.</li>
+                    <li><strong>Autorregulación:</strong> controlar las emociones y adaptarse a los cambios.</li>
+                    <li><strong>Motivación:</strong> mantener el compromiso con metas personales y profesionales.</li>
+                    <li><strong>Empatía:</strong> comprender los sentimientos de los demás.</li>
+                    <li><strong>Habilidades sociales:</strong> establecer relaciones interpersonales efectivas.</li>
+                </ul>
+
+                <!-- Botón alineado con la tarjeta -->
+                <div class="mt-6 text-center">
+                    <a href="https://www.psychologytoday.com/us/basics/emotional-intelligence" target="_blank"
+                        class="inline-block bg-teal-500 text-white font-quicksand px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-teal-600 transition transform hover:scale-105">
+                        Leer más
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Sección de Principales Teorías -->
+    <section id="teorias" class="py-20 px-6 bg-white">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Principales Teorías</h2>
+            <p class="mt-4 text-lg italic text-gray-700">
+                Descubre las teorías más relevantes sobre la motivación y la inteligencia emocional.
+            </p>
+        </div>
+
+        <!-- Contenedor de las Teorías -->
+        <div class="container mx-auto flex flex-col md:flex-row items-start gap-10 mt-10 max-w-6xl">
+
+            <!-- Columna 1: Teorías de la Motivación -->
+            <div class="w-full md:w-1/2 p-6 bg-blue-50 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold font-quicksand text-blue-500 text-center">Teorías de la Motivación
+                </h3>
+
+                <!-- Tarjeta: Maslow -->
+                <div
+                    class="bg-white p-5 rounded-lg shadow-md mt-4 hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-layer-group text-3xl text-blue-600"></i>
+                    <h4 class="text-xl font-semibold font-quicksand mt-2">Jerarquía de Necesidades (Maslow)</h4>
+                    <p class="text-gray-600 text-sm">Las necesidades humanas se organizan en una pirámide, desde lo
+                        básico hasta la autorrealización.</p>
+                </div>
+
+                <!-- Tarjeta: Herzberg -->
+                <div
+                    class="bg-white p-5 rounded-lg shadow-md mt-4 hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-balance-scale text-3xl text-blue-600"></i>
+                    <h4 class="text-xl font-semibold font-quicksand mt-2">Teoría de los Dos Factores (Herzberg)</h4>
+                    <p class="text-gray-600 text-sm">Distingue entre factores higiénicos (condiciones laborales) y
+                        motivacionales (reconocimiento, logros).</p>
+                </div>
+
+                <!-- Tarjeta: Vroom -->
+                <div
+                    class="bg-white p-5 rounded-lg shadow-md mt-4 hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-gift text-3xl text-blue-600"></i>
+                    <h4 class="text-xl font-semibold font-quicksand mt-2">Teoría de la Expectativa (Vroom)</h4>
+                    <p class="text-gray-600 text-sm">La motivación depende de la expectativa de obtener una recompensa
+                        valiosa.</p>
+                </div>
+
+                <!-- Tarjeta: Skinner -->
+                <div
+                    class="bg-white p-5 rounded-lg shadow-md mt-4 hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-sync-alt text-3xl text-blue-600"></i>
+                    <h4 class="text-xl font-semibold font-quicksand mt-2">Teoría del Refuerzo (Skinner)</h4>
+                    <p class="text-gray-600 text-sm">El refuerzo positivo o negativo modifica conductas para aumentar o
+                        reducir su frecuencia.</p>
+                </div>
+            </div>
+
+            <!-- Columna 2: Teorías de la Inteligencia Emocional -->
+            <div class="w-full md:w-1/2 p-6 bg-teal-50 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-semibold font-quicksand text-teal-500 text-center">Teorías de la Inteligencia
+                    Emocional</h3>
+
+                <!-- Tarjeta: Salovey y Mayer -->
+                <div
+                    class="bg-white p-5 rounded-lg shadow-md mt-4 hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-brain text-3xl text-teal-600"></i>
+                    <h4 class="text-xl font-semibold font-quicksand mt-2">Modelo de Habilidades (Salovey y Mayer)</h4>
+                    <p class="text-gray-600 text-sm">Define la inteligencia emocional como un conjunto de habilidades
+                        específicas para gestionar emociones.</p>
+                </div>
+
+                <!-- Tarjeta: Goleman -->
+                <div
+                    class="bg-white p-5 rounded-lg shadow-md mt-4 hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-user-tie text-3xl text-teal-600"></i>
+                    <h4 class="text-xl font-semibold font-quicksand mt-2">Modelo de Competencias (Goleman)</h4>
+                    <p class="text-gray-600 text-sm">Amplía la inteligencia emocional con competencias clave para el
+                        liderazgo y el éxito profesional.</p>
+                </div>
+
+                <!-- Tarjeta: Gardner -->
+                <div
+                    class="bg-white p-5 rounded-lg shadow-md mt-4 hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-lightbulb text-3xl text-teal-600"></i>
+                    <h4 class="text-xl font-semibold font-quicksand mt-2">Modelo de Inteligencias Múltiples (Gardner)
+                    </h4>
+                    <p class="text-gray-600 text-sm">Sostiene que la inteligencia emocional es una de varias
+                        inteligencias que las personas pueden desarrollar.</p>
+                </div>
+
+                <!-- Tarjeta: Gross -->
+                <div
+                    class="bg-white p-5 rounded-lg shadow-md mt-4 hover:shadow-lg transition transform hover:scale-105">
+                    <i class="fas fa-heartbeat text-3xl text-teal-600"></i>
+                    <h4 class="text-xl font-semibold font-quicksand mt-2">Teoría de la Regulación Emocional (Gross)</h4>
+                    <p class="text-gray-600 text-sm">Explica cómo las personas controlan sus emociones para adaptarse a
+                        diferentes situaciones.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Autores -->
+    <section id="autores" class="py-20 px-6 bg-gray-100">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Autores Principales</h2>
+            <p class="mt-4 text-lg italic text-gray-700">
+                Estos son los autores más importantes en los estudios sobre motivación e inteligencia emocional.
+            </p>
+        </div>
+
+        <!-- Contenedor del Carrusel -->
+        <div class="relative max-w-6xl mx-auto mt-10 overflow-hidden">
+            <!-- Carrusel -->
+            <div id="carousel" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar">
+
+                <!-- Card: Abraham Maslow -->
+                <div
+                    class="min-w-[250px] md:min-w-[300px] bg-white p-6 rounded-lg shadow-lg text-center flex-shrink-0 snap-center">
+                    <img src="img/abraham_maslow.webp" alt="Abraham Maslow"
+                        class="w-32 h-32 mx-auto rounded-full object-cover">
+                    <h3 class="text-xl font-semibold font-quicksand mt-4 text-blue-500">Abraham Maslow</h3>
+                    <p class="text-gray-600 text-sm">Jerarquía de Necesidades</p>
+                </div>
+
+                <!-- Card: Frederick Herzberg -->
+                <div
+                    class="min-w-[250px] md:min-w-[300px] bg-white p-6 rounded-lg shadow-lg text-center flex-shrink-0 snap-center">
+                    <img src="img/frederick.webp" alt="Frederick Herzberg"
+                        class="w-32 h-32 mx-auto rounded-full object-cover">
+                    <h3 class="text-xl font-semibold font-quicksand mt-4 text-blue-500">Frederick Herzberg</h3>
+                    <p class="text-gray-600 text-sm">Teoría de los Dos Factores</p>
+                </div>
+
+                <!-- Card: David McClelland -->
+                <div
+                    class="min-w-[250px] md:min-w-[300px] bg-white p-6 rounded-lg shadow-lg text-center flex-shrink-0 snap-center">
+                    <img src="img/david.webp" alt="David McClelland"
+                        class="w-32 h-32 mx-auto rounded-full object-cover">
+                    <h3 class="text-xl font-semibold font-quicksand mt-4 text-blue-500">David McClelland</h3>
+                    <p class="text-gray-600 text-sm">Teoría de las Necesidades</p>
+                </div>
+
+                <!-- Card: Daniel Goleman -->
+                <div
+                    class="min-w-[250px] md:min-w-[300px] bg-white p-6 rounded-lg shadow-lg text-center flex-shrink-0 snap-center">
+                    <img src="img/daniel.webp" alt="Daniel Goleman" class="w-32 h-32 mx-auto rounded-full object-cover">
+                    <h3 class="text-xl font-semibold font-quicksand mt-4 text-teal-500">Daniel Goleman</h3>
+                    <p class="text-gray-600 text-sm">Inteligencia Emocional</p>
+                </div>
+
+                <!-- Card: John Mayer y Peter Salovey -->
+                <div
+                    class="min-w-[250px] md:min-w-[300px] bg-white p-6 rounded-lg shadow-lg text-center flex-shrink-0 snap-center">
+                    <img src="img/john_y_peter.webp" alt="John Mayer"
+                        class="w-32 h-32 mx-auto rounded-full object-cover">
+                    <h3 class="text-xl font-semibold font-quicksand mt-4 text-teal-500">John Mayer & Peter Salovey</h3>
+                    <p class="text-gray-600 text-sm">Teoría de la Inteligencia Emocional</p>
+                </div>
+
+                <!-- Card: Reuven Bar-On -->
+                <div
+                    class="min-w-[250px] md:min-w-[300px] bg-white p-6 rounded-lg shadow-lg text-center flex-shrink-0 snap-center">
+                    <img src="img/reuven.webp" alt="Reuven Bar-On" class="w-32 h-32 mx-auto rounded-full object-cover">
+                    <h3 class="text-xl font-semibold font-quicksand mt-4 text-teal-500">Reuven Bar-On</h3>
+                    <p class="text-gray-600 text-sm">Modelo de Cociente Emocional</p>
+                </div>
+            </div>
+
+            <!-- Botones de Navegación -->
+            <button id="prev"
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/20 text-black p-4 rounded-full shadow-lg backdrop-blur-md hover:bg-blue-500/80 hover:scale-110 transition-all ease-in-out duration-300">
+                <i class="fas fa-chevron-left text-2xl transition-all duration-300 hover:text-white"></i>
+            </button>
+
+            <button id="next"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/20 text-black p-4 rounded-full shadow-lg backdrop-blur-md hover:bg-blue-500/80 hover:scale-110 transition-all ease-in-out duration-300">
+                <i class="fas fa-chevron-right text-2xl transition-all duration-300 hover:text-white"></i>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Sección de Técnicas de Motivación Laboral -->
+    <section id="tecnicas" class="py-20 px-6 bg-white">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl">
+
+            <!-- Lado Izquierdo: Información -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Técnicas de Motivación Laboral
+                </h2>
+                <p class="mt-4 text-base italic text-gray-700">
+                    Para mantener a los empleados comprometidos, las organizaciones pueden aplicar diversas estrategias:
+                </p>
+
+                <ul class="mt-6 space-y-4 text-gray-700 text-lg">
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-bullseye text-blue-500 text-xl"></i>
+                        <strong>Establecimiento de metas claras y alcanzables.</strong>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-gift text-green-500 text-xl"></i>
+                        <strong>Programas de incentivos y recompensas.</strong>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-users text-purple-500 text-xl"></i>
+                        <strong>Creación de un ambiente de trabajo positivo.</strong>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-chart-line text-orange-500 text-xl"></i>
+                        <strong>Oportunidades de desarrollo y crecimiento profesional.</strong>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-award text-yellow-500 text-xl"></i>
+                        <strong>Reconocimiento del desempeño y logros.</strong>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Lado Derecho: Imagen -->
+            <div class="flex justify-center">
+                <img src="https://img.freepik.com/vector-premium/mujer-joven-jane-apunta-direccion-marcada-ilustracion-vector-3d-lista-verificacion_365941-608.jpg?w=1480"
+                    alt="Motivación Laboral" class="rounded-lg max-w-full md:max-w-md">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sección de Programas de Calidad de Vida Laboral -->
+    <section id="programas" class="py-20 px-6 bg-white">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl">
+
+            <!-- Lado Izquierdo: Imagen -->
+            <div class="flex justify-center">
+                <img src="https://img.freepik.com/vector-premium/joven-jane-sosteniendo-cartel-tarea-pie-cerca-lista-verificacion-marcada-gigante-concepto-finalizacion-tareas-establecer-tarea-planificacion-gestion-tiempo-ilustracion-personaje-gente-vector-3d_365941-573.jpg?w=1800"
+                    alt="Calidad de Vida Laboral" class="rounded-lg max-w-full md:max-w-md">
+            </div>
+
+            <!-- Lado Derecho: Información -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Programas de Calidad de Vida
+                    Laboral</h2>
+                <p class="mt-4 text-lg italic text-gray-700">
+                    Las empresas pueden mejorar la calidad de vida de sus empleados mediante programas diseñados para
+                    fomentar el bienestar y la satisfacción en el trabajo:
+                </p>
+
+                <ul class="mt-6 space-y-4 text-gray-700 text-lg">
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-laptop-house text-blue-500 text-xl"></i>
+                        <strong>Flexibilidad laboral y teletrabajo.</strong>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-balance-scale text-green-500 text-xl"></i>
+                        <strong>Promoción de un equilibrio entre vida laboral y personal.</strong>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-chalkboard-teacher text-purple-500 text-xl"></i>
+                        <strong>Capacitación y desarrollo continuo.</strong>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-heartbeat text-orange-500 text-xl"></i>
+                        <strong>Estrategias para reducir el estrés y mejorar la salud mental.</strong>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-chair text-yellow-500 text-xl"></i>
+                        <strong>Espacios de trabajo ergonómicos y saludables.</strong>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Sección de Teorías de las Necesidades -->
+    <section id="necesidades" class="py-20 px-6 bg-blue-50">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Teorías de las Necesidades</h2>
+            <p class="mt-4 text-lg italic text-gray-700">
+                Diferentes teorías explican qué impulsa a las personas a actuar y cómo influyen en la motivación.
+            </p>
+        </div>
+
+        <!-- Contenedor de Cards -->
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 max-w-6xl">
+
+            <!-- Card 1: Pirámide de Maslow -->
+            <div class="w-full p-6 card-3d relative fade-in bg-white rounded-lg shadow-lg">
+                <i class="fas fa-layer-group text-5xl text-blue-600 absolute top-4 right-4 icon-3d"></i>
+                <h3 class="text-2xl font-semibold font-quicksand text-blue-500">Pirámide de Maslow</h3>
+                <p class="mt-2 italic text-gray-700">
+                    Explica que las personas satisfacen sus necesidades en una jerarquía desde lo básico hasta la
+                    autorrealización.
+                </p>
+                <ul class="mt-4 text-gray-600 font-quicksand list-disc pl-6">
+                    <li>Fisiológicas</li>
+                    <li>Seguridad</li>
+                    <li>Sociales</li>
+                    <li>Reconocimiento</li>
+                    <li>Autorrealización</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Teoría ERG -->
+            <div class="w-full p-6 card-3d relative fade-in bg-white rounded-lg shadow-lg">
+                <i class="fas fa-chart-bar text-5xl text-teal-600 absolute top-4 right-4 icon-3d"></i>
+                <h3 class="text-2xl font-semibold font-quicksand text-teal-500">Teoría ERG</h3>
+                <p class="mt-2 italic text-gray-700">
+                    Clasifica las necesidades en tres niveles: Existencia, Relación y Crecimiento, sin un orden
+                    estricto.
+                </p>
+                <ul class="mt-4 text-gray-600 font-quicksand list-disc pl-6">
+                    <li>Existencia</li>
+                    <li>Relación</li>
+                    <li>Crecimiento</li>
+                </ul>
+            </div>
+
+            <!-- Card 3: Teoría de McClelland -->
+            <div class="w-full p-6 card-3d relative fade-in bg-white rounded-lg shadow-lg">
+                <i class="fas fa-users text-5xl text-orange-600 absolute top-4 right-4 icon-3d"></i>
+                <h3 class="text-2xl font-semibold font-quicksand text-orange-500">Teoría de McClelland</h3>
+                <p class="mt-2 italic text-gray-700">
+                    Propone que las personas tienen diferentes necesidades según su experiencia.
+                </p>
+                <ul class="mt-4 text-gray-600 font-quicksand list-disc pl-6">
+                    <li>Logro</li>
+                    <li>Afiliación</li>
+                    <li>Poder</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Cuestionario -->
+    <section id="cuestionario" class="py-20 px-6 bg-white">
+        <div class="container mx-auto max-w-6xl space-y-10">
+
+            <!-- Título Mejorado -->
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Cuestionario sobre Motivación e
+                    Inteligencia Emocional</h2>
+                <p class="mt-4 text-lg italic text-gray-700">
+                    Responde las siguientes preguntas y verifica tus conocimientos.
+                </p>
+            </div>
+
+            <!-- Encuesta con Mejor Diseño -->
+            <div
+                class="bg-gradient-to-br from-white via-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl shadow-lg p-8">
+                <form id="quiz-form" class="space-y-6">
+
+                    <!-- Pregunta 1 -->
+                    <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-blue-500">
+                        <p class="text-lg font-semibold text-blue-600">1. ¿Cuál es una de las principales competencias
+                            de la inteligencia emocional según Daniel Goleman?</p>
+                        <label class="block mt-2 px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q1" value="a"> a) Inteligencia lógica.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q1" value="b"> b) Autoconciencia.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q1" value="c"> c) Memoria a largo plazo.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q1" value="d"> d) Pensamiento analítico.
+                        </label>
+                    </div>
+
+                    <!-- Pregunta 2 -->
+                    <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-blue-500">
+                        <p class="text-lg font-semibold text-blue-600">2. ¿Qué teoría de la motivación establece que las
+                            necesidades humanas están organizadas en niveles jerárquicos?</p>
+                        <label class="block mt-2 px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q2" value="a"> a) Teoría del Refuerzo de Skinner.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q2" value="b"> b) Teoría de la Expectativa de Vroom.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q2" value="c"> c) Teoría de la Jerarquía de Necesidades de Maslow.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q2" value="d"> d) Teoría de los Dos Factores de Herzberg.
+                        </label>
+                    </div>
+
+                    <!-- Pregunta 3 -->
+                    <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-blue-500">
+                        <p class="text-lg font-semibold text-blue-600">3. ¿Qué afirmación sobre la inteligencia
+                            emocional es correcta?</p>
+                        <label class="block mt-2 px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q3" value="a"> a) Solo es importante en la vida personal.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q3" value="b"> b) Se basa únicamente en el coeficiente
+                            intelectual.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q3" value="c"> c) Ayuda a manejar emociones y mejorar relaciones
+                            interpersonales.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q3" value="d"> d) No tiene impacto en el liderazgo empresarial.
+                        </label>
+                    </div>
+
+                    <!-- Pregunta 4 -->
+                    <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-blue-500">
+                        <p class="text-lg font-semibold text-blue-600">4. ¿Qué habilidad de la inteligencia emocional
+                            permite reconocer y comprender los sentimientos de los demás?</p>
+                        <label class="block mt-2 px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q4" value="a"> a) Autorregulación.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q4" value="b"> b) Empatía.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q4" value="c"> c) Motivación extrínseca.
+                        </label>
+                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
+                            <input type="radio" name="q4" value="d"> d) Autoconfianza.
+                        </label>
+                    </div>
+
+                    <!-- Botón de Verificación Mejorado -->
+                    <button type="button" id="verificar"
+                        class="mt-6 hidden bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition shadow-lg">
+                        <i class="fas fa-check-circle"></i> Verificar Respuestas
+                    </button>
+
+                    <!-- Resultado -->
+                    <p id="resultado" class="mt-4 text-lg font-bold text-green-600 hidden"></p>
+                </form>
+            </div>
+
+            <!-- Videos en una fila con título -->
+            <div class="text-center mt-10">
+                <h3 class="text-2xl font-quicksand font-semibold text-blue-600">Videos Recomendados</h3>
+                <p class="text-gray-700 italic mt-2">Complementa tu aprendizaje con estos videos sobre Motivación e
+                    Inteligencia Emocional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <iframe class="rounded-lg shadow-lg w-full h-64" src="https://www.youtube.com/embed/q8YFbFPUqhI"
+                    allowfullscreen></iframe>
+                <iframe class="rounded-lg shadow-lg w-full h-64" src="https://www.youtube.com/embed/MAIkO0Ta3hY"
+                    allowfullscreen></iframe>
+            </div>
+
+        </div>
+    </section>
+    <!-- Sección de Calificación -->
+    <section id="calificacion" class="py-20 px-6 bg-blue-50">
+        <div class="container mx-auto max-w-4xl bg-white rounded-xl shadow-lg p-8">
+
+            <!-- Título -->
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Califica Nuestro Sitio Web</h2>
+                <p class="mt-4 text-lg italic text-gray-700">
+                    Tu opinión es importante para nosotros. Ayúdanos a mejorar con tu calificación y comentarios.
+                </p>
+            </div>
+
+            <!-- Formulario de Calificación -->
+            <form id="rating-form" class="mt-8 space-y-6">
+
+                <!-- Estrellas de Calificación -->
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-700">¿Qué te pareció el sitio?</p>
+                    <div class="flex justify-center mt-3 space-x-2">
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="1">★</span>
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="2">★</span>
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="3">★</span>
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="4">★</span>
+                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
+                            data-value="5">★</span>
+                    </div>
+                    <input type="hidden" id="rating" name="rating" value="0">
+                </div>
+
+                <!-- Comentarios -->
+                <div>
+                    <label for="comentarios" class="block text-lg font-semibold text-gray-700">Escribe tu
+                        opinión:</label>
+                    <textarea id="comentarios" name="comentarios" rows="4"
+                        class="w-full mt-2 p-3 border-2 border-blue-300 rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                        placeholder="Escribe aquí tu comentario..."></textarea>
+                </div>
+
+                <!-- Botón de Envío -->
+                <div class="text-center">
+                    <button type="submit"
+                        class="mt-4 bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition shadow-lg">
+                        <i class="fas fa-paper-plane"></i> Enviar Calificación
+                    </button>
+                </div>
+
+                <!-- Mensaje de confirmación -->
+                <p id="mensaje-confirmacion" class="mt-4 text-lg font-bold text-green-600 hidden text-center"></p>
+
+            </form>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-t from-blue-600 to-blue-500 text-white text-center py-8">
+    <div class="container mx-auto max-w-5xl px-6">
+        
+        <!-- Logo o Nombre del Sitio -->
+        <h2 class="text-2xl font-quicksand font-bold">Motivación & Inteligencia Emocional</h2>
+        <p class="text-sm mt-2">Mejorando el bienestar y el rendimiento en el ámbito laboral y académico.</p>
+
+        <!-- Integrantes del Equipo -->
+        <div class="mt-6">
+            <h3 class="text-lg font-semibold">Equipo de Desarrollo</h3>
+            <ul class="mt-2 text-sm opacity-90 space-y-1">
+                <li>Hernández Ramírez Cristopher Adriel</li>
+                <li>Narvaez Manzanero María Belem</li>
+                <li>Novelo Chan Rocío Montserrat</li>
+                <li>Sánchez Gatica María José</li>
+                <li>Tuz Chan Adrián Arturo</li>
+            </ul>
+        </div>
+
+        <!-- Línea Divisora -->
+        <div class="w-20 h-[2px] bg-white mx-auto my-6 opacity-50"></div>
+
+        <!-- Derechos Reservados -->
+        <p class="text-sm opacity-80">© 2025 Motivación & Inteligencia Emocional. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const stars = document.querySelectorAll(".star");
+            const ratingInput = document.getElementById("rating");
+            const form = document.getElementById("rating-form");
+            const mensajeConfirmacion = document.getElementById("mensaje-confirmacion");
+
+            stars.forEach(star => {
+                star.addEventListener("click", function () {
+                    const value = this.getAttribute("data-value");
+                    ratingInput.value = value;
+
+                    // Resalta las estrellas seleccionadas
+                    stars.forEach(s => {
+                        if (s.getAttribute("data-value") <= value) {
+                            s.classList.add("text-yellow-400");
+                        } else {
+                            s.classList.remove("text-yellow-400");
+                        }
+                    });
+                });
+            });
+
+            // Manejo del envío del formulario
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                // Validación simple
+                if (ratingInput.value === "0") {
+                    alert("Por favor, selecciona una calificación.");
+                    return;
+                }
+
+                mensajeConfirmacion.textContent = "¡Gracias por tu calificación! 😀";
+                mensajeConfirmacion.classList.remove("hidden");
+
+                // Limpia el formulario
+                setTimeout(() => {
+                    form.reset();
+                    stars.forEach(s => s.classList.remove("text-yellow-400"));
+                    mensajeConfirmacion.classList.add("hidden");
+                }, 3000);
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("quiz-form");
+            const verificarBtn = document.getElementById("verificar");
+            const resultado = document.getElementById("resultado");
+
+            // Respuestas correctas
+            const respuestasCorrectas = {
+                q1: "b",
+                q2: "c",
+                q3: "c",
+                q4: "b",
+            };
+
+            // Detecta si todas las preguntas fueron respondidas
+            form.addEventListener("change", function () {
+                const todasRespondidas = Object.keys(respuestasCorrectas).every(q =>
+                    document.querySelector(`input[name="${q}"]:checked`));
+
+                if (todasRespondidas) {
+                    verificarBtn.classList.remove("hidden");
+                }
+            });
+
+            // Verifica respuestas
+            verificarBtn.addEventListener("click", function () {
+                let correctas = 0;
+
+                Object.keys(respuestasCorrectas).forEach(q => {
+                    const seleccionada = document.querySelector(`input[name="${q}"]:checked`);
+                    if (seleccionada && seleccionada.value === respuestasCorrectas[q]) {
+                        correctas++;
+                    }
+                });
+
+                resultado.textContent = `Acertaste ${correctas} de 4 preguntas.`;
+                resultado.classList.remove("hidden");
+            });
+        });
+
+        const carousel = document.getElementById("carousel");
+        const prevBtn = document.getElementById("prev");
+        const nextBtn = document.getElementById("next");
+
+        const cardWidth = document.querySelector("#carousel div").offsetWidth + 24; // Tamaño de cada card + gap
+        let scrollAmount = 0;
+
+        nextBtn.addEventListener("click", () => {
+            if (scrollAmount < carousel.scrollWidth - carousel.clientWidth) {
+                scrollAmount += cardWidth;
+                carousel.scrollLeft = scrollAmount;
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (scrollAmount > 0) {
+                scrollAmount -= cardWidth;
+                carousel.scrollLeft = scrollAmount;
+            }
+        });
+
+        // Menú responsive en móviles
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden', 'menu-hidden');
+                setTimeout(() => {
+                    mobileMenu.classList.add('menu-visible');
+                }, 10);
+            } else {
+                mobileMenu.classList.remove('menu-visible');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden', 'menu-hidden');
+                }, 300);
+            }
+        });
+
+        // Cierra el menú cuando se hace clic en una opción con animación suave
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.remove('menu-visible');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden', 'menu-hidden');
+                }, 300);
+            });
+        });
+
+        // Detectar la sección en pantalla y actualizar la navbar
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let currentSection = "";
+
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+
+                if (link.getAttribute("href").includes(currentSection)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
