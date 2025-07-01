@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <style>
@@ -109,24 +110,6 @@
 
         .arrow:nth-child(3) {
             animation-delay: 0.4s;
-        }
-
-        /* Efecto 3D para las Cards */
-        .card-3d {
-            background: linear-gradient(145deg, #ffffff, #e3e3e3);
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), -5px -5px 15px rgba(255, 255, 255, 0.7);
-            border-radius: 15px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .card-3d:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Íconos 3D */
-        .icon-3d {
-            filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2));
         }
 
         /* Transición general */
@@ -244,17 +227,16 @@
         }
 
         .shadow-orange-left-bottom {
-  box-shadow: -6px 6px 12px rgba(255, 165, 0, 0.4);
-}
+            box-shadow: -6px 6px 12px rgba(255, 165, 0, 0.4);
+        }
 
-.shadow-blue-left-bottom {
-  box-shadow: -6px 6px 12px rgba(0, 123, 255, 0.4);
-}
+        .shadow-blue-left-bottom {
+            box-shadow: -6px 6px 12px rgba(0, 123, 255, 0.4);
+        }
 
-.shadow-yellow-left-bottom {
-  box-shadow: -6px 6px 12px rgba(255, 193, 7, 0.4);
-}
-
+        .shadow-yellow-left-bottom {
+            box-shadow: -6px 6px 12px rgba(255, 193, 7, 0.4);
+        }
     </style>
 </head>
 
@@ -281,7 +263,7 @@
                     <a href="#equipo" class="link-nav nav-link hidden md:block">Equipo</a>
                     <a href="#institucional" class="link-nav nav-link hidden md:block">Nosotros</a>
                     <a href="#recomendaciones" class="link-nav nav-link hidden md:block">Propuestas</a>
-                    <a href="#contacto" class="link-nav nav-link hidden md:block">Contacto</a>
+                    <a href="#reservar" class="link-nav nav-link hidden md:block">Contacto</a>
 
                     <!-- Botón móvil -->
                     <button id="menu-btn" class="menu-button md:hidden relative w-8 h-8 z-50">
@@ -301,10 +283,11 @@
             <a href="#inicio" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Inicio</a>
             <a href="#servicios" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Servicios</a>
             <a href="#equipo" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Equipo</a>
-            <a href="#institucional" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Nosotros</a>
+            <a href="#institucional"
+                class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Nosotros</a>
             <a href="#recomendaciones"
                 class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Propuestas</a>
-            <a href="#contacto" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Contacto</a>
+            <a href="#reservar" class="nav-link block py-2 text-gray-700 hover:text-blue-500 transition">Contacto</a>
         </div>
 
 
@@ -353,651 +336,538 @@
     </section>
 
 
-<!-- Sección de Antecedentes -->
-<section id="antecedentes" class="py-10 px-6 bg-white">
-  <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 max-w-6xl">
+    <!-- Sección de Antecedentes -->
+    <section id="antecedentes" class="py-10 px-6 bg-white">
+        <div class="container mx-auto flex flex-col md:flex-row items-center gap-10 max-w-6xl">
 
-    <!-- Imagen izquierda -->
-    <div class="w-full md:w-2/5 fade-in">
-      <img
-        src="https://cancun.leblancsparesorts.com/couple_massage_spa_le_blanc_spa_resort_cancun_cabf241072.webp"
-        alt="Toallas y piedras en spa" class="rounded-lg shadow-lg w-full max-w-xs mx-auto" />
-    </div>
-
-    <!-- Texto derecho -->
-    <div class="w-full md:w-3/5 fade-in">
-      <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-teal-400">Nuestra Historia</h2>
-      <p class="mt-8 text-lg text-gray-700 leading-relaxed text-justify italic">
-        Aura Spa abrió sus puertas en 2020 con una misión clara: ofrecer un espacio de descanso exclusivo para turistas.
-        Su enfoque especializado en masajes ha sido clave para consolidarse rápidamente como un punto de relajación ideal,
-        especialmente entre visitantes del hotel Riu Palace y zonas cercanas de Cancún.
-      </p>
-      <p class="mt-4 text-lg text-gray-700 leading-relaxed text-justify italic">
-        Gracias a su atención personalizada y un ambiente cuidadosamente diseñado, el spa ha logrado diferenciarse de
-        otros centros de bienestar, apostando por la calidad sobre la cantidad.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-  <section id="servicios" class="py-20 px-6 bg-gray-100">
-  <div class="container mx-auto text-center max-w-6xl">
-    <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-400 mb-10">Nuestros Masajes</h2>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px] md:auto-rows-[220px]">
-      <!-- Masaje de Espalda -->
-      <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://centrokalindi.es/wp-content/uploads/2023/05/masaje-relajante-espalda.jpg" alt="Masaje de Espalda" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje de Espalda</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Relaja la tensión acumulada en la espalda.<br><strong>$900</strong></p>
-        </div>
-      </div>
-
-      <!-- Reflexología -->
-      <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://www.moompaya.com/wp-content/uploads/2024/03/reflexologia-en-pies-en-guadalajara-spas-gdl.jpg" alt="Reflexología" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Reflexología</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Estimulación de puntos clave en los pies.<br><strong>$900</strong></p>
-        </div>
-      </div>
-
-      <!-- Masaje Relajante -->
-      <div class="relative group col-span-2 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://image.tuasaude.com/media/article/yi/yk/masajes-relajantes-con-aceites-esenciales_68365.jpg?width=686&height=487" alt="Masaje Relajante" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje Relajante</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Alivia el estrés y promueve la calma.<br><strong>$1,200</strong></p>
-        </div>
-      </div>
-
-      <!-- Aromaterapia -->
-      <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://www.jessyfloreria.com/wp-content/uploads/2024/09/Flores-y-la-aromaterapia.jpg" alt="Aromaterapia" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Aromaterapia</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Masaje con aceites esenciales.<br><strong>$1,300</strong></p>
-        </div>
-      </div>
-
-      <!-- Tejido Profundo -->
-      <div class="relative group col-span-2 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://es.massagesesselwelt.de/cdn/shop/articles/0_header_deep_tissue-699707.png?v=1686516799" alt="Tejido Profundo" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje de Tejido Profundo</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Ideal para contracturas profundas.<br><strong>$1,500</strong></p>
-        </div>
-      </div>
-
-      <!-- Deportivo -->
-      <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://www.saludterapia.com/images/saludterapia/glosario/masaje-deportivo/masaje-deportivo.jpg" alt="Masaje Deportivo" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje Deportivo</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Para recuperación muscular.<br><strong>$1,500</strong></p>
-        </div>
-      </div>
-
-      <!-- Descontracturante -->
-      <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://www.efisio.es/wp-content/uploads/masaje-hombro-scaled.jpg" alt="Masaje Descontracturante" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Descontracturante</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Alivia puntos de tensión crónica.<br><strong>$1,600</strong></p>
-        </div>
-      </div>
-
-      <!-- Holístico -->
-      <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://vitalitydaycusco.com/wp-content/uploads/2020/06/masaje-holistico-guadalajara-Masajes-Guadalajara-1024x681.jpg" alt="Masaje Holístico" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje Holístico</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Equilibra cuerpo y mente.<br><strong>$1,600</strong></p>
-        </div>
-      </div>
-
-      <!-- Piedras Calientes -->
-      <div class="relative group col-span-2 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://i0.wp.com/fisiomedbolivia.net/wp-content/uploads/2017/09/masaz-kamieniami-1200x801.jpg?fit=1200%2C801&ssl=1" alt="Piedras Calientes" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Piedras Calientes</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Roca volcánica para energía y relajación.<br><strong>$1,700</strong></p>
-        </div>
-      </div>
-
-      <!-- Terapéutico -->
-      <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://thefixroom.com/wp-content/uploads/2023/03/massagen_header-1-1024x683.jpg" alt="Masaje Terapéutico" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje Terapéutico</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Recuperación física y emocional.<br><strong>$2,000</strong></p>
-        </div>
-      </div>
-
-      <!-- Masaje Aura -->
-      <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://www.bupasalud.com.mx/sites/default/files/inline-images/aromaterapia-3.jpg" alt="Masaje Aura" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje Aura</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Terapia energética y armónica.<br><strong>$1,800</strong></p>
-        </div>
-      </div>
-
-      <!-- Masaje en Pareja -->
-      <div class="relative group col-span-2 row-span-1 rounded-lg overflow-hidden">
-        <img src="https://villagrouploreto.s3.amazonaws.com/uploads/article/cover/395/beneficios-de-recibir-un-masaje-en-pareja.jpg" alt="Masaje en Pareja" class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
-        <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje en Pareja</div>
-        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
-          <p class="text-sm">Experiencia compartida de relajación.<br><strong>$2,200</strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="equipo" class="py-24 px-6 bg-gradient-to-b from-[#ffffff] to-[#e6edf3]">
-  <div class="max-w-7xl mx-auto text-center mb-16 relative">
-    <!-- Efecto decorativo detrás del título -->
-    <div class="absolute inset-x-0 top-10 opacity-10 blur-2xl pointer-events-none">
-      <div class="h-48 w-48 mx-auto rounded-full bg-blue-300"></div>
-    </div>
-
-    <h2 class="text-4xl font-extrabold text-gray-800 font-quicksand relative z-10">Nuestro equipo</h2>
-    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto relative z-10">
-      En Aura Spa, contamos con un equipo humano especializado y comprometido con tu bienestar.
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto px-4">
-    <!-- Tarjeta Base -->
-    <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
-      <div class="w-full h-56 overflow-hidden rounded-t-3xl">
-        <img src="https://vidalturismo.com/wp-content/uploads/2020/11/LUIS-WEB.jpg"
-             alt="Gerente del Spa" class="w-full h-full object-cover object-top">
-      </div>
-      <div class="p-5 text-center">
-        <h3 class="text-base font-bold text-gray-800">Gerente del Spa</h3>
-        <p class="text-sm text-gray-600 mt-1">Lidera el servicio con excelencia y compromiso.</p>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
-      <div class="w-full h-56 overflow-hidden rounded-t-3xl">
-        <img src="https://st4.depositphotos.com/1643295/30663/i/1600/depositphotos_306637478-stock-photo-cheerful-female-spa-salon-receptionist.jpg"
-             alt="Recepcionistas" class="w-full h-full object-cover object-center">
-      </div>
-      <div class="p-5 text-center">
-        <h3 class="text-base font-bold text-gray-800">Recepcionistas (2)</h3>
-        <p class="text-sm text-gray-600 mt-1">Ofrecen atención cálida desde tu llegada.</p>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
-      <div class="w-full h-56 overflow-hidden rounded-t-3xl">
-        <img src="https://img.freepik.com/foto-gratis/vista-frontal-mujer-trabajando-spa_23-2150911764.jpg?semt=ais_hybrid&w=740"
-             alt="Terapeutas" class="w-full h-full object-cover object-center">
-      </div>
-      <div class="p-5 text-center">
-        <h3 class="text-base font-bold text-gray-800">Terapeutas (12)</h3>
-        <p class="text-sm text-gray-600 mt-1">Expertos en masajes relajantes y terapéuticos.</p>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
-      <div class="w-full h-56 overflow-hidden rounded-t-3xl">
-        <img src="https://img.freepik.com/fotos-premium/retrato-trabajador-lavanderia-fondo-ropa-perchas-tintoreria_154092-5784.jpg"
-             alt="Lavandería" class="w-full h-full object-cover object-center">
-      </div>
-      <div class="p-5 text-center">
-        <h3 class="text-base font-bold text-gray-800">Lavandería (2)</h3>
-        <p class="text-sm text-gray-600 mt-1">Garantizan limpieza y presentación impecable.</p>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
-      <div class="w-full h-56 overflow-hidden rounded-t-3xl">
-        <img src="https://serviciototal.com.mx/cdn/shop/articles/a_latino_technician_installing_a_jacuzzi_on_a_modern_terrace_carefully_connecting_the_water_pipes_w_cdxpi61k0xdnhfc2i3b5_1.png?v=1736787230&width=533"
-             alt="Mantenimiento" class="w-full h-full object-cover object-center">
-      </div>
-      <div class="p-5 text-center">
-        <h3 class="text-base font-bold text-gray-800">Mantenimiento (2)</h3>
-        <p class="text-sm text-gray-600 mt-1">Responsables del orden, mantenimiento y soporte.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="institucional" class="relative py-24 px-6 bg-white">
-    <div class="max-w-6xl mx-auto text-center px-6">
-        <h2 class="text-4xl font-bold text-sky-300 mb-2 font-quicksand">Nuestra identidad</h2>
-        <p class="text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
-            En Aura Spa, trabajamos con pasión y compromiso para brindar una experiencia única de relajación y
-            bienestar.
-        </p>
-
-        <div class="relative grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-            <!-- Línea conectora -->
-            <div
-                class="hidden md:block absolute top-28 left-1/2 transform -translate-x-1/2 w-[80%] h-1 bg-gradient-to-r from-orange-500 via-sky-400 to-amber-400 z-0">
+            <!-- Imagen izquierda -->
+            <div class="w-full md:w-2/5 fade-in">
+                <img src="https://cancun.leblancsparesorts.com/couple_massage_spa_le_blanc_spa_resort_cancun_cabf241072.webp"
+                    alt="Toallas y piedras en spa" class="rounded-lg shadow-lg w-full max-w-xs mx-auto" />
             </div>
-            <div
-                class="relative z-10 bg-white rounded-full w-72 h-72 mx-auto flex flex-col justify-center items-center text-center p-6 shadow-orange-left-bottom">
-                <div class="rounded-full mb-4 w-28 h-28 flex justify-center items-center">
-                    <img src="img/foco.png" alt="Icono Misión" class="max-w-full max-h-full object-contain">
-                </div>
-                <h3 class="text-lg font-bold text-red-500 mb-2">Misión</h3>
-                <p class="text-sm text-gray-600 leading-snug">
-                    Ofrecer masajes terapéuticos de alta calidad en un ambiente tranquilo y profesional.
+
+            <!-- Texto derecho -->
+            <div class="w-full md:w-3/5 fade-in">
+                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-teal-400">Nuestra Historia</h2>
+                <p class="mt-8 text-lg text-gray-700 leading-relaxed text-justify italic">
+                    Aura Spa abrió sus puertas en 2020 con una misión clara: ofrecer un espacio de descanso exclusivo
+                    para turistas.
+                    Su enfoque especializado en masajes ha sido clave para consolidarse rápidamente como un punto de
+                    relajación ideal,
+                    especialmente entre visitantes del hotel Riu Palace y zonas cercanas de Cancún.
+                </p>
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed text-justify italic">
+                    Gracias a su atención personalizada y un ambiente cuidadosamente diseñado, el spa ha logrado
+                    diferenciarse de
+                    otros centros de bienestar, apostando por la calidad sobre la cantidad.
                 </p>
             </div>
-
-            <div
-                class="relative z-10 bg-white rounded-full w-72 h-72 mx-auto flex flex-col justify-center items-center text-center p-6 shadow-blue-left-bottom">
-                <div class="rounded-full mb-4 w-20 h-20 flex justify-center items-center">
-                    <img src="https://static.vecteezy.com/system/resources/previews/009/665/493/non_2x/dart-board-target-with-arrow-flat-design-free-png.png"
-                        alt="Icono Visión" class="max-w-full max-h-full object-contain">
-                </div>
-                <h3 class="text-lg font-bold text-sky-500 mb-2">Visión</h3>
-                <p class="text-sm text-gray-600 leading-snug">
-                    Ser el spa de referencia en Cancún por excelencia y atención al cliente.
-                </p>
-            </div>
-
-            <div
-                class="relative z-10 bg-white rounded-full w-72 h-72 mx-auto flex flex-col justify-center items-center text-center p-6 shadow-yellow-left-bottom">
-                <div class="rounded-full mb-4 w-16 h-16 flex justify-center items-center">
-                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/mano-con-estrella-13836907-11108964.png"
-                        alt="Icono Valores" class="max-w-full max-h-full object-contain">
-                </div>
-                <h3 class="text-lg font-bold text-amber-500 mb-2">Valores</h3>
-                <ul class="text-sm text-gray-600 space-y-1 leading-snug">
-                    <li>Profesionalismo</li>
-                    <li>Compromiso con la calidad</li>
-                    <li>Respeto personalizado</li>
-                    <li>Innovación en el servicio</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <!-- Sección de Técnicas de Motivación Laboral -->
-    <section id="tecnicas" class="py-20 px-6 bg-white">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl">
-
-            <!-- Lado Izquierdo: Información -->
-            <div>
-                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Técnicas de motivación laboral
-                </h2>
-                <p class="mt-4 text-base italic text-gray-700">
-                    Para mantener a los empleados comprometidos, las organizaciones pueden aplicar diversas estrategias:
-                </p>
-
-                <ul class="mt-6 space-y-4 text-gray-700 text-lg">
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-bullseye text-blue-500 text-xl"></i>
-                        <strong>Establecimiento de metas claras y alcanzables.</strong>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-gift text-green-500 text-xl"></i>
-                        <strong>Programas de incentivos y recompensas.</strong>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-users text-purple-500 text-xl"></i>
-                        <strong>Creación de un ambiente de trabajo positivo.</strong>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-chart-line text-orange-500 text-xl"></i>
-                        <strong>Oportunidades de desarrollo y crecimiento profesional.</strong>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-award text-yellow-500 text-xl"></i>
-                        <strong>Reconocimiento del desempeño y logros.</strong>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Lado Derecho: Imagen -->
-            <div class="flex justify-center">
-                <img src="https://img.freepik.com/vector-premium/mujer-joven-jane-apunta-direccion-marcada-ilustracion-vector-3d-lista-verificacion_365941-608.jpg?w=1480"
-                    alt="Motivación Laboral" class="rounded-lg max-w-full md:max-w-md">
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Sección de Programas de Calidad de Vida Laboral -->
-    <section id="programas" class="py-20 px-6 bg-white">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-6xl">
-
-            <!-- Lado Izquierdo: Imagen -->
-            <div class="flex justify-center">
-                <img src="https://img.freepik.com/vector-premium/joven-jane-sosteniendo-cartel-tarea-pie-cerca-lista-verificacion-marcada-gigante-concepto-finalizacion-tareas-establecer-tarea-planificacion-gestion-tiempo-ilustracion-personaje-gente-vector-3d_365941-573.jpg?w=1800"
-                    alt="Calidad de Vida Laboral" class="rounded-lg max-w-full md:max-w-md">
-            </div>
-
-            <!-- Lado Derecho: Información -->
-            <div>
-                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Programas de calidad de vida
-                    laboral</h2>
-                <p class="mt-4 text-lg italic text-gray-700">
-                    Las empresas pueden mejorar la calidad de vida de sus empleados mediante programas diseñados para
-                    fomentar el bienestar y la satisfacción en el trabajo:
-                </p>
-
-                <ul class="mt-6 space-y-4 text-gray-700 text-lg">
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-laptop-house text-blue-500 text-xl"></i>
-                        <strong>Flexibilidad laboral y teletrabajo.</strong>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-balance-scale text-green-500 text-xl"></i>
-                        <strong>Promoción de un equilibrio entre vida laboral y personal.</strong>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-chalkboard-teacher text-purple-500 text-xl"></i>
-                        <strong>Capacitación y desarrollo continuo.</strong>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-heartbeat text-orange-500 text-xl"></i>
-                        <strong>Estrategias para reducir el estrés y mejorar la salud mental.</strong>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fas fa-chair text-yellow-500 text-xl"></i>
-                        <strong>Espacios de trabajo ergonómicos y saludables.</strong>
-                    </li>
-                </ul>
-            </div>
-
         </div>
     </section>
 
 
-    <!-- Sección de Teorías de las Necesidades -->
-    <section id="necesidades" class="py-20 px-6 bg-blue-50">
-        <div class="container mx-auto text-center max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Teorías de las necesidades</h2>
-            <p class="mt-4 text-lg italic text-gray-700">
-                Diferentes teorías explican qué impulsa a las personas a actuar y cómo influyen en la motivación.
+    <section id="servicios" class="py-20 px-6 bg-gray-100">
+        <div class="container mx-auto text-center max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-400 mb-10">Nuestros Masajes</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px] md:auto-rows-[220px]">
+                <!-- Masaje de Espalda -->
+                <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://centrokalindi.es/wp-content/uploads/2023/05/masaje-relajante-espalda.jpg"
+                        alt="Masaje de Espalda"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje
+                        de Espalda</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Relaja la tensión acumulada en la espalda.<br><strong>$900</strong></p>
+                    </div>
+                </div>
+
+                <!-- Reflexología -->
+                <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://www.moompaya.com/wp-content/uploads/2024/03/reflexologia-en-pies-en-guadalajara-spas-gdl.jpg"
+                        alt="Reflexología"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">
+                        Reflexología</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Estimulación de puntos clave en los pies.<br><strong>$900</strong></p>
+                    </div>
+                </div>
+
+                <!-- Masaje Relajante -->
+                <div class="relative group col-span-2 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://image.tuasaude.com/media/article/yi/yk/masajes-relajantes-con-aceites-esenciales_68365.jpg?width=686&height=487"
+                        alt="Masaje Relajante"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje
+                        Relajante</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Alivia el estrés y promueve la calma.<br><strong>$1,200</strong></p>
+                    </div>
+                </div>
+
+                <!-- Aromaterapia -->
+                <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://www.jessyfloreria.com/wp-content/uploads/2024/09/Flores-y-la-aromaterapia.jpg"
+                        alt="Aromaterapia"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">
+                        Aromaterapia</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Masaje con aceites esenciales.<br><strong>$1,300</strong></p>
+                    </div>
+                </div>
+
+                <!-- Tejido Profundo -->
+                <div class="relative group col-span-2 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://es.massagesesselwelt.de/cdn/shop/articles/0_header_deep_tissue-699707.png?v=1686516799"
+                        alt="Tejido Profundo"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje
+                        de Tejido Profundo</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Ideal para contracturas profundas.<br><strong>$1,500</strong></p>
+                    </div>
+                </div>
+
+                <!-- Deportivo -->
+                <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://www.saludterapia.com/images/saludterapia/glosario/masaje-deportivo/masaje-deportivo.jpg"
+                        alt="Masaje Deportivo"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje
+                        Deportivo</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Para recuperación muscular.<br><strong>$1,500</strong></p>
+                    </div>
+                </div>
+
+                <!-- Descontracturante -->
+                <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://www.efisio.es/wp-content/uploads/masaje-hombro-scaled.jpg"
+                        alt="Masaje Descontracturante"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">
+                        Descontracturante</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Alivia puntos de tensión crónica.<br><strong>$1,600</strong></p>
+                    </div>
+                </div>
+
+                <!-- Holístico -->
+                <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://vitalitydaycusco.com/wp-content/uploads/2020/06/masaje-holistico-guadalajara-Masajes-Guadalajara-1024x681.jpg"
+                        alt="Masaje Holístico"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje
+                        Holístico</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Equilibra cuerpo y mente.<br><strong>$1,600</strong></p>
+                    </div>
+                </div>
+
+                <!-- Piedras Calientes -->
+                <div class="relative group col-span-2 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://i0.wp.com/fisiomedbolivia.net/wp-content/uploads/2017/09/masaz-kamieniami-1200x801.jpg?fit=1200%2C801&ssl=1"
+                        alt="Piedras Calientes"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">
+                        Piedras Calientes</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Roca volcánica para energía y relajación.<br><strong>$1,700</strong></p>
+                    </div>
+                </div>
+
+                <!-- Terapéutico -->
+                <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://thefixroom.com/wp-content/uploads/2023/03/massagen_header-1-1024x683.jpg"
+                        alt="Masaje Terapéutico"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje
+                        Terapéutico</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Recuperación física y emocional.<br><strong>$2,000</strong></p>
+                    </div>
+                </div>
+
+                <!-- Masaje Aura -->
+                <div class="relative group col-span-1 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://www.bupasalud.com.mx/sites/default/files/inline-images/aromaterapia-3.jpg"
+                        alt="Masaje Aura"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje
+                        Aura</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Terapia energética y armónica.<br><strong>$1,800</strong></p>
+                    </div>
+                </div>
+
+                <!-- Masaje en Pareja -->
+                <div class="relative group col-span-2 row-span-1 rounded-lg overflow-hidden">
+                    <img src="https://villagrouploreto.s3.amazonaws.com/uploads/article/cover/395/beneficios-de-recibir-un-masaje-en-pareja.jpg"
+                        alt="Masaje en Pareja"
+                        class="w-full h-full object-cover transition duration-500 group-hover:brightness-50">
+                    <div class="absolute top-0 left-0 w-full bg-opacity-80 text-white py-2 text-sm font-semibold">Masaje
+                        en Pareja</div>
+                    <div
+                        class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center text-white text-center px-4">
+                        <p class="text-sm">Experiencia compartida de relajación.<br><strong>$2,200</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="equipo" class="py-24 px-6 bg-gradient-to-b from-[#ffffff] to-[#e6edf3]">
+        <div class="max-w-7xl mx-auto text-center mb-16 relative">
+            <!-- Efecto decorativo detrás del título -->
+            <div class="absolute inset-x-0 top-10 opacity-10 blur-2xl pointer-events-none">
+                <div class="h-48 w-48 mx-auto rounded-full bg-blue-300"></div>
+            </div>
+
+            <h2 class="text-4xl font-extrabold text-gray-800 font-quicksand relative z-10">Nuestro equipo</h2>
+            <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto relative z-10">
+                En Aura Spa, contamos con un equipo humano especializado y comprometido con tu bienestar.
             </p>
         </div>
 
-        <!-- Contenedor de Cards -->
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-10 max-w-6xl">
-
-            <!-- Card 1: Pirámide de Maslow -->
-            <div class="w-full p-6 card-3d relative fade-in bg-white rounded-lg shadow-lg">
-                <i class="fas fa-layer-group text-5xl text-blue-600 absolute top-4 right-4 icon-3d"></i>
-                <h3 class="text-2xl font-semibold font-quicksand text-blue-500">Pirámide de Maslow</h3>
-                <p class="mt-2 italic text-gray-700">
-                    Explica que las personas satisfacen sus necesidades en una jerarquía desde lo básico hasta la
-                    autorrealización.
-                </p>
-                <ul class="mt-4 text-gray-600 font-quicksand list-disc pl-6">
-                    <li>Fisiológicas</li>
-                    <li>Seguridad</li>
-                    <li>Sociales</li>
-                    <li>Reconocimiento</li>
-                    <li>Autorrealización</li>
-                </ul>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto px-4">
+            <!-- Tarjeta Base -->
+            <div
+                class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
+                <div class="w-full h-56 overflow-hidden rounded-t-3xl">
+                    <img src="https://vidalturismo.com/wp-content/uploads/2020/11/LUIS-WEB.jpg" alt="Gerente del Spa"
+                        class="w-full h-full object-cover object-top">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-base font-bold text-gray-800">Gerente del Spa</h3>
+                    <p class="text-sm text-gray-600 mt-1">Lidera el servicio con excelencia y compromiso.</p>
+                </div>
             </div>
 
-            <!-- Card 2: Teoría ERG -->
-            <div class="w-full p-6 card-3d relative fade-in bg-white rounded-lg shadow-lg">
-                <i class="fas fa-chart-bar text-5xl text-teal-600 absolute top-4 right-4 icon-3d"></i>
-                <h3 class="text-2xl font-semibold font-quicksand text-teal-500">Teoría ERG</h3>
-                <p class="mt-2 italic text-gray-700">
-                    Clasifica las necesidades en tres niveles: Existencia, Relación y Crecimiento, sin un orden
-                    estricto.
-                </p>
-                <ul class="mt-4 text-gray-600 font-quicksand list-disc pl-6">
-                    <li>Existencia</li>
-                    <li>Relación</li>
-                    <li>Crecimiento</li>
-                </ul>
+            <div
+                class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
+                <div class="w-full h-56 overflow-hidden rounded-t-3xl">
+                    <img src="https://st4.depositphotos.com/1643295/30663/i/1600/depositphotos_306637478-stock-photo-cheerful-female-spa-salon-receptionist.jpg"
+                        alt="Recepcionistas" class="w-full h-full object-cover object-center">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-base font-bold text-gray-800">Recepcionistas (2)</h3>
+                    <p class="text-sm text-gray-600 mt-1">Ofrecen atención cálida desde tu llegada.</p>
+                </div>
             </div>
 
-            <!-- Card 3: Teoría de McClelland -->
-            <div class="w-full p-6 card-3d relative fade-in bg-white rounded-lg shadow-lg">
-                <i class="fas fa-users text-5xl text-orange-600 absolute top-4 right-4 icon-3d"></i>
-                <h3 class="text-2xl font-semibold font-quicksand text-orange-500">Teoría de McClelland</h3>
-                <p class="mt-2 italic text-gray-700">
-                    Propone que las personas tienen diferentes necesidades según su experiencia.
-                </p>
-                <ul class="mt-4 text-gray-600 font-quicksand list-disc pl-6">
-                    <li>Logro</li>
-                    <li>Afiliación</li>
-                    <li>Poder</li>
-                </ul>
+            <div
+                class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
+                <div class="w-full h-56 overflow-hidden rounded-t-3xl">
+                    <img src="https://img.freepik.com/foto-gratis/vista-frontal-mujer-trabajando-spa_23-2150911764.jpg?semt=ais_hybrid&w=740"
+                        alt="Terapeutas" class="w-full h-full object-cover object-center">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-base font-bold text-gray-800">Terapeutas (12)</h3>
+                    <p class="text-sm text-gray-600 mt-1">Expertos en masajes relajantes y terapéuticos.</p>
+                </div>
+            </div>
+
+            <div
+                class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
+                <div class="w-full h-56 overflow-hidden rounded-t-3xl">
+                    <img src="https://img.freepik.com/fotos-premium/retrato-trabajador-lavanderia-fondo-ropa-perchas-tintoreria_154092-5784.jpg"
+                        alt="Lavandería" class="w-full h-full object-cover object-center">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-base font-bold text-gray-800">Lavandería (2)</h3>
+                    <p class="text-sm text-gray-600 mt-1">Garantizan limpieza y presentación impecable.</p>
+                </div>
+            </div>
+
+            <div
+                class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300 border border-gray-100">
+                <div class="w-full h-56 overflow-hidden rounded-t-3xl">
+                    <img src="https://serviciototal.com.mx/cdn/shop/articles/a_latino_technician_installing_a_jacuzzi_on_a_modern_terrace_carefully_connecting_the_water_pipes_w_cdxpi61k0xdnhfc2i3b5_1.png?v=1736787230&width=533"
+                        alt="Mantenimiento" class="w-full h-full object-cover object-center">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="text-base font-bold text-gray-800">Mantenimiento (2)</h3>
+                    <p class="text-sm text-gray-600 mt-1">Responsables del orden, mantenimiento y soporte.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Cuestionario -->
-    <section id="cuestionario" class="py-20 px-6 bg-white">
-        <div class="container mx-auto max-w-6xl space-y-10">
+    <section id="institucional" class="relative py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto text-center px-6">
+            <h2 class="text-4xl font-bold text-sky-300 mb-2 font-quicksand">Nuestra identidad</h2>
+            <p class="text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
+                En Aura Spa, trabajamos con pasión y compromiso para brindar una experiencia única de relajación y
+                bienestar.
+            </p>
 
-            <!-- Título Mejorado -->
-            <div class="text-center">
-                <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Cuestionario sobre motivación e
-                    inteligencia emocional</h2>
-                <p class="mt-4 text-lg italic text-gray-700">
-                    Responde las siguientes preguntas y verifica tus conocimientos.
+            <div class="relative grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+                <!-- Línea conectora -->
+                <div
+                    class="hidden md:block absolute top-28 left-1/2 transform -translate-x-1/2 w-[80%] h-1 bg-gradient-to-r from-orange-500 via-sky-400 to-amber-400 z-0">
+                </div>
+                <div
+                    class="relative z-10 bg-white rounded-full w-72 h-72 mx-auto flex flex-col justify-center items-center text-center p-6 shadow-orange-left-bottom">
+                    <div class="rounded-full mb-4 w-28 h-28 flex justify-center items-center">
+                        <img src="img/foco.png" alt="Icono Misión" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold text-red-500 mb-2">Misión</h3>
+                    <p class="text-sm text-gray-600 leading-snug">
+                        Ofrecer masajes terapéuticos de alta calidad en un ambiente tranquilo y profesional.
+                    </p>
+                </div>
+
+                <div
+                    class="relative z-10 bg-white rounded-full w-72 h-72 mx-auto flex flex-col justify-center items-center text-center p-6 shadow-blue-left-bottom">
+                    <div class="rounded-full mb-4 w-20 h-20 flex justify-center items-center">
+                        <img src="https://static.vecteezy.com/system/resources/previews/009/665/493/non_2x/dart-board-target-with-arrow-flat-design-free-png.png"
+                            alt="Icono Visión" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold text-sky-500 mb-2">Visión</h3>
+                    <p class="text-sm text-gray-600 leading-snug">
+                        Ser el spa de referencia en Cancún por excelencia y atención al cliente.
+                    </p>
+                </div>
+
+                <div
+                    class="relative z-10 bg-white rounded-full w-72 h-72 mx-auto flex flex-col justify-center items-center text-center p-6 shadow-yellow-left-bottom">
+                    <div class="rounded-full mb-4 w-16 h-16 flex justify-center items-center">
+                        <img src="https://cdn3d.iconscout.com/3d/premium/thumb/mano-con-estrella-13836907-11108964.png"
+                            alt="Icono Valores" class="max-w-full max-h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-bold text-amber-500 mb-2">Valores</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 leading-snug">
+                        <li>Profesionalismo</li>
+                        <li>Compromiso con la calidad</li>
+                        <li>Respeto personalizado</li>
+                        <li>Innovación en el servicio</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="recomendaciones" class="py-24 px-6 bg-gradient-to-b from-white to-blue-50">
+        <div class="max-w-7xl mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold text-blue-400 mb-4 font-quicksand">Recomendaciones destacadas</h2>
+            <p class="text-gray-600 text-lg mb-16 max-w-3xl mx-auto">
+                Productos y servicios especialmente seleccionados para mejorar tu bienestar, descanso y armonía.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Card -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-xl overflow-hidden transition-transform hover:-translate-y-2">
+                    <img src="https://masajesvipmiraflores.com/wp-content/uploads/2024/07/masaje-clasico.jpg"
+                        alt="Masaje relajante"
+                        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="p-6 text-left">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Masaje relajante premium</h3>
+                        <p class="text-gray-500 text-sm leading-snug mb-3">Con aromaterapia y música ambiente para
+                            liberar tensiones acumuladas.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-semibold text-sm">Desde $799 MXN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-xl overflow-hidden transition-transform hover:-translate-y-2">
+                    <img src="https://phoenixliposuction.com/wp-content/uploads/2024/10/essentialOils-899747886-770x533-1_jpg.webp"
+                        alt="Aceites esenciales"
+                        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="p-6 text-left">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Aceites esenciales terapéuticos</h3>
+                        <p class="text-gray-500 text-sm leading-snug mb-3">Mezclas naturales de lavanda, menta y
+                            eucalipto para relajar mente y cuerpo.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-semibold text-sm">Desde $349 MXN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card -->
+                <div
+                    class="group relative bg-white rounded-2xl shadow-xl overflow-hidden transition-transform hover:-translate-y-2">
+                    <img src="https://www.fiteralvirtual.com/content-assets/public/eyJhbGciOiJIUzI1NiJ9.eyJvYmplY3Rfa2V5IjoieDhyZWZsd3hwazB5aGhlbDlweWdpdGloZWY3cyIsImRvbWFpbiI6Ind3dy5maXRlcmFsdmlydHVhbC5jb20ifQ.sklRhSxrRV-cMG29siqWGswJuwV3ptBD8E55MJwelYw"
+                        alt="Velas aromáticas"
+                        class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="p-6 text-left">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Velas aromáticas</h3>
+                        <p class="text-gray-500 text-sm leading-snug mb-3">Hechas a mano para acompañar sesiones de
+                            meditación o descanso.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-600 font-semibold text-sm">Desde $199 MXN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reservar" class="relative py-28 px-6 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden">
+        <!-- Fondo decorativo -->
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1599058918141-9b1e02d50b76?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center opacity-10 z-0">
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-teal-400 font-quicksand mb-4">Reserva tu experiencia</h2>
+                <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Sumérgete en un ambiente de relajación total. Reserva hoy mismo tu masaje frente al mar.
                 </p>
             </div>
 
-            <!-- Encuesta con Mejor Diseño -->
             <div
-                class="bg-gradient-to-br from-white via-blue-50 to-blue-100 border-2 border-blue-300 rounded-xl shadow-lg p-8">
-                <form id="quiz-form" class="space-y-6">
+                class="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl p-10 grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Lado Izquierdo: Detalles -->
+                <div class="flex flex-col justify-center space-y-6">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-clock text-3xl text-blue-600"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Horario de atención</h3>
+                            <p class="text-gray-600 text-sm">Todos los días de 9:00 AM a 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-map-marker-alt text-3xl text-red-500"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Ubicación</h3>
+                            <p class="text-gray-600 text-sm">Playa Tortugas, Cancún, Quintana Roo</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-phone-alt text-3xl text-green-600"></i>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Teléfono</h3>
+                            <p class="text-gray-600 text-sm">+52 998 123 4567</p>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- Pregunta 1 -->
-                    <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-blue-500">
-                        <p class="text-lg font-semibold text-blue-600">1. ¿Cuál es una de las principales competencias
-                            de la inteligencia emocional según Daniel Goleman?</p>
-                        <label class="block mt-2 px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q1" value="a"> a) Inteligencia lógica.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q1" value="b"> b) Autoconciencia.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q1" value="c"> c) Memoria a largo plazo.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q1" value="d"> d) Pensamiento analítico.
-                        </label>
+                <!-- Lado Derecho: Formulario -->
+                <form id="form-reserva" class="space-y-5" onsubmit="enviarReserva(event)">
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre completo</label>
+                        <input type="text" id="nombre" required
+                            class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
 
-                    <!-- Pregunta 2 -->
-                    <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-blue-500">
-                        <p class="text-lg font-semibold text-blue-600">2. ¿Qué teoría de la motivación establece que las
-                            necesidades humanas están organizadas en niveles jerárquicos?</p>
-                        <label class="block mt-2 px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q2" value="a"> a) Teoría del Refuerzo de Skinner.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q2" value="b"> b) Teoría de la Expectativa de Vroom.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q2" value="c"> c) Teoría de la Jerarquía de Necesidades de Maslow.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q2" value="d"> d) Teoría de los Dos Factores de Herzberg.
-                        </label>
+                    <div>
+                        <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono</label>
+                        <input type="tel" id="telefono" required
+                            class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
 
-                    <!-- Pregunta 3 -->
-                    <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-blue-500">
-                        <p class="text-lg font-semibold text-blue-600">3. ¿Qué afirmación sobre la inteligencia
-                            emocional es correcta?</p>
-                        <label class="block mt-2 px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q3" value="a"> a) Solo es importante en la vida personal.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q3" value="b"> b) Se basa únicamente en el coeficiente
-                            intelectual.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q3" value="c"> c) Ayuda a manejar emociones y mejorar relaciones
-                            interpersonales.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q3" value="d"> d) No tiene impacto en el liderazgo empresarial.
-                        </label>
+                    <div>
+                        <label for="fecha" class="block text-sm font-medium text-gray-700">Fecha</label>
+                        <input type="date" id="fecha" required
+                            class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
                     </div>
 
-                    <!-- Pregunta 4 -->
-                    <div class="p-4 rounded-lg bg-white shadow-md border-l-4 border-blue-500">
-                        <p class="text-lg font-semibold text-blue-600">4. ¿Qué habilidad de la inteligencia emocional
-                            permite reconocer y comprender los sentimientos de los demás?</p>
-                        <label class="block mt-2 px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q4" value="a"> a) Autorregulación.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q4" value="b"> b) Empatía.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q4" value="c"> c) Motivación extrínseca.
-                        </label>
-                        <label class="block px-4 py-2 rounded-md hover:bg-blue-100 cursor-pointer">
-                            <input type="radio" name="q4" value="d"> d) Autoconfianza.
-                        </label>
+                    <div>
+                        <label for="hora" class="block text-sm font-medium text-gray-700">Hora</label>
+                        <input type="time" id="hora" min="09:00" max="17:00" required
+                            class="mt-1 w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                        <p class="text-xs text-gray-500 mt-1">Horario disponible: 9:00 AM a 5:00 PM</p>
                     </div>
 
-                    <!-- Botón de Verificación Mejorado -->
-                    <button type="button" id="verificar"
-                        class="mt-6 hidden bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition shadow-lg">
-                        <i class="fas fa-check-circle"></i> Verificar respuestas
+                    <button type="submit"
+                        class="w-full bg-blue-400 hover:bg-blue-500 text-white font-semibold py-3 rounded-lg shadow-md transition duration-300">
+                        Confirmar reservación
                     </button>
-
-                    <!-- Resultado -->
-                    <p id="resultado" class="mt-4 text-lg font-bold text-green-600 hidden"></p>
                 </form>
             </div>
-
-            <!-- Videos en una fila con título -->
-            <div class="text-center mt-10">
-                <h3 class="text-2xl font-quicksand font-semibold text-blue-600">Videos recomendados</h3>
-                <p class="text-gray-700 italic mt-2">Complementa tu aprendizaje con estos videos sobre Motivación e
-                    Inteligencia Emocional.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <iframe class="rounded-lg shadow-lg w-full h-64" src="https://www.youtube.com/embed/vkhmTQ1PFbo"
-                    allowfullscreen></iframe>
-                <iframe class="rounded-lg shadow-lg w-full h-64" src="https://www.youtube.com/embed/q8YFbFPUqhI"
-                    allowfullscreen></iframe>
-            </div>
-
-
-        </div>
-    </section>
-    <!-- Sección de Calificación Mejorada -->
-    <section id="calificacion" class="py-16 px-6 bg-gradient-to-b from-blue-50 to-blue-100">
-        <div class="container mx-auto max-w-3xl bg-white rounded-xl shadow-lg p-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-quicksand font-bold text-blue-600">Califica nuestro sitio</h2>
-            <p class="mt-4 text-lg italic text-gray-700">Tu opinión es muy importante para nosotros.</p>
-
-            <!-- Formulario de Calificación -->
-            <form id="rating-form" class="mt-8 space-y-6">
-                <!-- Nombre o Correo -->
-                <div>
-                    <label for="nombre" class="block text-lg font-semibold text-gray-700">Nombre o Correo
-                        Electrónico:</label>
-                    <input type="text" id="nombre" name="nombre"
-                        class="w-full mt-2 p-3 border-2 border-blue-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                        placeholder="Escribe tu nombre o correo" required>
-                </div>
-
-                <!-- Estrellas de Calificación -->
-                <div class="text-center">
-                    <p class="text-lg font-semibold text-gray-700">¿Qué te pareció el sitio?</p>
-                    <div class="flex justify-center mt-3 space-x-2">
-                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                            data-value="1">★</span>
-                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                            data-value="2">★</span>
-                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                            data-value="3">★</span>
-                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                            data-value="4">★</span>
-                        <span class="star text-4xl cursor-pointer text-gray-300 hover:text-yellow-400 transition"
-                            data-value="5">★</span>
-                    </div>
-                    <input type="hidden" id="rating" name="rating" value="0">
-                </div>
-
-                <!-- Comentarios -->
-                <div>
-                    <label for="comentarios" class="block text-lg font-semibold text-gray-700">Escribe tu
-                        opinión:</label>
-                    <textarea id="comentarios" name="comentarios" rows="4"
-                        class="w-full mt-2 p-3 border-2 border-blue-300 rounded-lg shadow-md focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                        placeholder="Escribe aquí tu comentario..." required></textarea>
-                </div>
-
-                <!-- Botón de Envío con Animación -->
-                <div class="text-center">
-                    <button id="enviar-btn" type="submit"
-                        class="mt-4 bg-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-600 transition shadow-lg flex items-center justify-center gap-2">
-                        <i class="fas fa-paper-plane"></i> Enviar calificación
-                    </button>
-
-                    <!-- Ícono de carga oculto -->
-                    <div id="loading-icon" class="hidden mt-4">
-                        <i class="fas fa-spinner fa-spin text-blue-500 text-3xl"></i>
-                        <p class="text-blue-500 font-semibold mt-2">Enviando...</p>
-                    </div>
-                </div>
-
-                <!-- Mensaje de Confirmación -->
-                <div id="mensaje-confirmacion" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg shadow-md">
-                    <i class="fas fa-check-circle text-2xl"></i>
-                    <p class="mt-2 text-lg font-semibold">¡Gracias por tu calificación!</p>
-                    <p class="text-sm text-gray-600">Tu opinión ha sido enviada con éxito.</p>
-                </div>
-            </form>
         </div>
     </section>
 
 
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-t from-blue-600 to-blue-500 text-white text-center py-8">
-        <div class="container mx-auto max-w-5xl px-6">
+ <footer class="bg-gradient-to-t from-blue-800 via-blue-700 to-blue-600 text-white pt-12 pb-8 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
 
-            <!-- Logo o Nombre del Sitio -->
-            <h2 class="text-2xl font-quicksand font-bold">Motivación & Inteligencia Emocional</h2>
-            <p class="text-sm mt-2">Mejorando el bienestar y el rendimiento en el ámbito laboral y académico.</p>
+    <!-- Logo y descripción -->
+    <div class="text-center md:text-left space-y-3">
+      <h2 class="text-3xl font-quicksand font-bold tracking-wide">Aura Spa</h2>
+      <p class="text-sm text-blue-100">
+        Bienestar con propósito, relajación con ciencia. Terapias que elevan cuerpo, mente y espíritu.
+      </p>
+      <div class="flex justify-center md:justify-start gap-3 mt-4">
+        <a href="#" class="hover:text-amber-300 transition"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="#" class="hover:text-amber-300 transition"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="#" class="hover:text-amber-300 transition"><i class="fab fa-whatsapp fa-lg"></i></a>
+      </div>
+    </div>
 
-            <!-- Integrantes del Equipo -->
-            <div class="mt-6">
-                <h3 class="text-lg font-semibold">Equipo de desarrollo</h3>
-                <ul class="mt-2 text-sm opacity-90 space-y-1">
-                    <li>Hernández Ramírez Cristopher Adriel</li>
-                    <li>Narvaez Manzanero María Belem</li>
-                    <li>Novelo Chan Rocío Montserrat</li>
-                    <li>Sánchez Gatica María José</li>
-                    <li>Tuz Chan Adrián Arturo</li>
-                </ul>
-            </div>
+    <!-- Información de contacto -->
+    <div class="text-center space-y-3">
+      <h3 class="text-lg font-semibold text-amber-300">Contacto</h3>
+      <p class="text-sm"><i class="fas fa-phone-alt mr-2"></i>+52 998 123 4567</p>
+      <p class="text-sm"><i class="fas fa-envelope mr-2"></i>contacto@auraspa.com</p>
+      <p class="text-sm"><i class="fas fa-map-marker-alt mr-2"></i>Playa Tortugas, Cancún, Q.Roo</p>
+    </div>
 
-            <!-- Línea Divisora -->
-            <div class="w-20 h-[2px] bg-white mx-auto my-6 opacity-50"></div>
+    <!-- Equipo de desarrollo -->
+    <div class="text-center md:text-right">
+      <h3 class="text-lg font-semibold text-amber-300 mb-3">Equipo de desarrollo</h3>
+      <ul class="text-sm space-y-1 text-blue-100">
+        <li>Hernández Ramírez Cristopher Adriel</li>
+        <li>Narvaez Manzanero María Belem</li>
+        <li>Novelo Chan Rocío Montserrat</li>
+        <li>Sánchez Gatica María José</li>
+        <li>Tuz Chan Adrián Arturo</li>
+      </ul>
+    </div>
+  </div>
 
-            <!-- Derechos Reservados -->
-            <p class="text-sm opacity-80">© 2025 Motivación & Inteligencia Emocional. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+  <!-- Divider -->
+  <div class="border-t border-blue-400 my-8"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- Derechos -->
+  <p class="text-center text-sm text-blue-200">
+    © 2025 Aura Spa Todos los derechos reservados.
+  </p>
+</footer>
 
     <script>
+
+        function enviarReserva(e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById("nombre").value;
+            const telefono = document.getElementById("telefono").value;
+
+            if (!nombre || !telefono) return;
+
+            Swal.fire({
+                title: '¡Reservación exitosa!',
+                text: 'Gracias por reservar con Aura Spa. Te esperamos para una experiencia inolvidable.',
+                icon: 'success',
+                confirmButtonColor: '#3b82f6',
+                confirmButtonText: 'Cerrar'
+            });
+
+            document.getElementById("form-reserva").reset();
+        }
+
         window.addEventListener("scroll", () => {
             const navbar = document.getElementById("navbar");
             const logoText = document.getElementById("logo-text");
@@ -1016,148 +886,6 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("navbar").classList.remove("navbar-floating");
-        });
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            emailjs.init("Ldsx9l03dW483KPEy");
-
-            const stars = document.querySelectorAll(".star");
-            const ratingInput = document.getElementById("rating");
-            const enviarBtn = document.getElementById("enviar-btn");
-            const loadingIcon = document.getElementById("loading-icon");
-            const nombreInput = document.getElementById("nombre");
-            const comentariosInput = document.getElementById("comentarios");
-            const form = document.getElementById("rating-form");
-            const mensajeConfirmacion = document.getElementById("mensaje-confirmacion");
-
-            // Función para activar las estrellas
-            stars.forEach(star => {
-                star.addEventListener("click", function () {
-                    const value = this.getAttribute("data-value");
-                    ratingInput.value = value;
-
-                    stars.forEach(s => s.classList.remove("text-yellow-400"));
-                    for (let i = 0; i < value; i++) {
-                        stars[i].classList.add("text-yellow-400");
-                    }
-
-                    validarFormulario();
-                });
-            });
-
-            // Función para validar si todos los campos están llenos
-            function validarFormulario() {
-                if (nombreInput.value.trim() !== "" && comentariosInput.value.trim() !== "" && ratingInput.value !== "0") {
-                    enviarBtn.disabled = false;
-                    enviarBtn.classList.remove("bg-blue-300", "cursor-not-allowed");
-                    enviarBtn.classList.add("bg-blue-500", "hover:bg-blue-600", "cursor-pointer");
-                } else {
-                    enviarBtn.disabled = true;
-                    enviarBtn.classList.add("bg-blue-300", "cursor-not-allowed");
-                    enviarBtn.classList.remove("bg-blue-500", "hover:bg-blue-600", "cursor-pointer");
-                }
-            }
-
-            // Detectar cambios en los campos
-            nombreInput.addEventListener("input", validarFormulario);
-            comentariosInput.addEventListener("input", validarFormulario);
-
-            // Enviar formulario con EmailJS
-            form.addEventListener("submit", function (event) {
-                event.preventDefault();
-
-                // Ocultar botón y mostrar loading
-                enviarBtn.classList.add("hidden");
-                loadingIcon.classList.remove("hidden");
-
-                const formData = {
-                    to_email: "belemnarvaez1@gmail.com", // Asegura que el correo de destino es correcto
-                    from_name: nombreInput.value, // Ajuste para EmailJS
-                    user_rating: ratingInput.value, // Cambia la variable a un formato más claro
-                    user_message: comentariosInput.value // Cambia a algo más explícito
-                };
-
-
-                emailjs.send("service_w2hr0lt", "template_ah54y6h", formData)
-                    .then(() => {
-                        // Restaurar formulario
-                        form.reset();
-                        stars.forEach(s => s.classList.remove("text-yellow-400"));
-                        ratingInput.value = "0";
-                        validarFormulario();
-
-                        // Ocultar loading y mostrar mensaje de éxito
-                        loadingIcon.classList.add("hidden");
-                        mensajeConfirmacion.classList.remove("hidden");
-                    })
-                    .catch(error => {
-                        console.error("❌ Error al enviar la calificación:", error);
-                        loadingIcon.classList.add("hidden");
-                        enviarBtn.classList.remove("hidden");
-                    });
-            });
-        });
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.getElementById("quiz-form");
-            const verificarBtn = document.getElementById("verificar");
-            const resultado = document.getElementById("resultado");
-
-            // Respuestas correctas
-            const respuestasCorrectas = {
-                q1: "b",
-                q2: "c",
-                q3: "c",
-                q4: "b",
-            };
-
-            // Detecta si todas las preguntas fueron respondidas
-            form.addEventListener("change", function () {
-                const todasRespondidas = Object.keys(respuestasCorrectas).every(q =>
-                    document.querySelector(`input[name="${q}"]:checked`));
-
-                if (todasRespondidas) {
-                    verificarBtn.classList.remove("hidden");
-                }
-            });
-
-            // Verifica respuestas
-            verificarBtn.addEventListener("click", function () {
-                let correctas = 0;
-
-                Object.keys(respuestasCorrectas).forEach(q => {
-                    const seleccionada = document.querySelector(`input[name="${q}"]:checked`);
-                    if (seleccionada && seleccionada.value === respuestasCorrectas[q]) {
-                        correctas++;
-                    }
-                });
-
-                resultado.textContent = `Acertaste ${correctas} de 4 preguntas.`;
-                resultado.classList.remove("hidden");
-            });
-        });
-
-        const carousel = document.getElementById("carousel");
-        const prevBtn = document.getElementById("prev");
-        const nextBtn = document.getElementById("next");
-
-        const cardWidth = document.querySelector("#carousel div").offsetWidth + 24; // Tamaño de cada card + gap
-        let scrollAmount = 0;
-
-        nextBtn.addEventListener("click", () => {
-            if (scrollAmount < carousel.scrollWidth - carousel.clientWidth) {
-                scrollAmount += cardWidth;
-                carousel.scrollLeft = scrollAmount;
-            }
-        });
-
-        prevBtn.addEventListener("click", () => {
-            if (scrollAmount > 0) {
-                scrollAmount -= cardWidth;
-                carousel.scrollLeft = scrollAmount;
-            }
         });
 
         const menuBtn = document.getElementById('menu-btn');
